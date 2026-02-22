@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blumen & Stil — Exklusive Sträuße & Lieferung</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="static/css/app.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       PROMO BAR
+  ═══════════════════════════════════════════ -->
+  <div class="promo-bar">
+    Kostenlose Lieferung ab 40 € &nbsp;·&nbsp; Lieferung innerhalb von 60 Minuten
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       HEADER
+  ═══════════════════════════════════════════ -->
+  <header class="header js-header">
+    <div class="container">
+      <div class="header__inner">
+
+        <!-- Left -->
+        <div class="header__left">
+          <button class="header__burger js-burger" aria-label="Menü öffnen">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <span class="header__catalog-label">Katalog</span>
+        </div>
+
+        <!-- Center: Logo -->
+        <a href="/" class="header__logo">Blumen<span>&</span>Stil</a>
+
+        <!-- Right: Actions -->
+        <div class="header__actions">
+          <button class="header__action-btn js-search-btn" aria-label="Suche">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+          </button>
+          <button class="header__action-btn js-open-cart" aria-label="Warenkorb">
+            <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            <span class="header__cart-badge js-cart-badge">0</span>
+          </button>
+          <button class="header__action-btn" aria-label="Profil">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════
+       NAV DRAWER
+  ═══════════════════════════════════════════ -->
+  <nav class="nav-drawer js-nav-drawer" aria-label="Hauptmenü">
+    <button class="nav-drawer__close js-nav-close" aria-label="Schließen">
+      <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <ul class="nav-drawer__menu">
+      <li class="nav-drawer__item"><a href="#categories" class="nav-drawer__link">Katalog</a></li>
+      <li class="nav-drawer__item"><a href="#bestsellers" class="nav-drawer__link">Bestseller</a></li>
+      <li class="nav-drawer__item"><a href="#" class="nav-drawer__link">Kontakt</a></li>
+      <li class="nav-drawer__item"><a href="#" class="nav-drawer__link">Bestellung</a></li>
+    </ul>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       OVERLAY
+  ═══════════════════════════════════════════ -->
+  <div class="overlay js-overlay"></div>
+
+  <!-- ══════════════════════════════════════════
+       CART DRAWER
+  ═══════════════════════════════════════════ -->
+  <aside class="cart-drawer js-cart-drawer">
+    <div class="cart-drawer__header">
+      <h2 class="cart-drawer__title">Warenkorb</h2>
+      <button class="cart-drawer__close js-cart-close" aria-label="Schließen">
+        <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="cart-drawer__body">
+      <div style="text-align:center; padding: 3rem 0; color: var(--color-text-muted); font-size: var(--text-sm);">
+        Ihr Warenkorb ist leer
+      </div>
+    </div>
+    <div class="cart-drawer__footer">
+      <div class="cart-drawer__total">
+        <span>Gesamt</span>
+        <span class="cart-drawer__total-price">0 €</span>
+      </div>
+      <a href="#" class="btn btn--primary btn--full btn--lg">Zur Kasse</a>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════════════
+       MAIN
+  ═══════════════════════════════════════════ -->
+  <main>
+
+    <!-- HERO ─────────────────────────────────── -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__wrapper">
+
+          <div class="hero__media">
+            <img
+              class="hero__img"
+              src="static/img/hero_floradeluxe.png"
+              alt="Exklusiver Blumenstrauß"
+              loading="eager"
+            >
+          </div>
+
+          <div class="hero__content">
+            <span class="hero__eyebrow">Handgefertigte Sträuße</span>
+            <h1 class="hero__title">Blumen, die für Sie sprechen</h1>
+            <p class="hero__subtitle">Frische, handgefertigte Blumensträuße mit Lieferung innerhalb von 60 Minuten. Jedes Arrangement ist ein Unikat.</p>
+            <div class="hero__actions">
+              <a href="#categories" class="btn btn--primary btn--lg">Katalog ansehen</a>
+              <a href="#bestsellers" class="btn btn--ghost">Bestseller</a>
+            </div>
+            <div class="hero__scroll-hint">Nach unten scrollen</div>
+          </div>
+
+          <div class="hero__media-badge">
+            <div class="hero__media-badge-text">Lieferung</div>
+            <div class="hero__media-badge-value">in 60 Min.</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORIES ───────────────────────────── -->
+    <section class="section categories" id="categories">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Wählen Sie Ihren Stil</span>
+          <h2 class="section-title">Kategorien</h2>
+        </div>
+      </div>
+      <div class="container">
+        <div class="categories__grid">
+
+          <article class="cat-card">
+            <img class="cat-card__img" src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=600&q=80" alt="Monosträuße">
+            <div class="cat-card__overlay"></div>
+            <div class="cat-card__label">
+              <h3 class="cat-card__title">Monosträuße</h3>
+              <p class="cat-card__count">24 Artikel</p>
+            </div>
+          </article>
+
+          <article class="cat-card">
+            <img class="cat-card__img" src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=600&q=80" alt="Designer-Sträuße">
+            <div class="cat-card__overlay"></div>
+            <div class="cat-card__label">
+              <h3 class="cat-card__title">Designer-Sträuße</h3>
+              <p class="cat-card__count">18 Artikel</p>
+            </div>
+          </article>
+
+          <article class="cat-card">
+            <img class="cat-card__img" src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?auto=format&fit=crop&w=600&q=80" alt="Trockenblumen">
+            <div class="cat-card__overlay"></div>
+            <div class="cat-card__label">
+              <h3 class="cat-card__title">Trockenblumen</h3>
+              <p class="cat-card__count">12 Artikel</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BESTSELLERS ──────────────────────────── -->
+    <section class="section bestsellers" id="bestsellers">
+      <div class="container">
+        <div class="section-header flex-between">
+          <div>
+            <span class="section-label">Beliebt</span>
+            <h2 class="section-title">Bestseller</h2>
+          </div>
+          <a href="#" class="btn btn--ghost">Gesamter Katalog</a>
+        </div>
+        <div class="bestsellers__grid">
+
+          <article class="card">
+            <div class="card__img-wrap">
+              <img class="card__img" src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?auto=format&fit=crop&w=500&q=80" alt="Morning Dew">
+              <span class="card__badge">Hit</span>
+              <button class="card__quick-view">Schnellansicht</button>
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Morning Dew</h3>
+              <p class="card__desc">Zarte Pfingstrosen in Kraftpapier — das ideale Geschenk</p>
+              <div class="card__footer">
+                <span class="card__price">35,00 €</span>
+                <button class="card__add-btn js-add-to-cart" aria-label="In den Warenkorb">
+                  <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__img-wrap">
+              <img class="card__img" src="https://images.unsplash.com/photo-1533616688419-b7a585564566?auto=format&fit=crop&w=500&q=80" alt="Velvet Sunset">
+              <span class="card__badge">Neu</span>
+              <button class="card__quick-view">Schnellansicht</button>
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Velvet Sunset</h3>
+              <p class="card__desc">Samtige Rosen in tiefem Rot</p>
+              <div class="card__footer">
+                <span class="card__price">42,00 €</span>
+                <button class="card__add-btn js-add-to-cart" aria-label="In den Warenkorb">
+                  <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__img-wrap">
+              <img class="card__img" src="https://images.unsplash.com/photo-1525310238831-5731d513990c?auto=format&fit=crop&w=500&q=80" alt="White Silence">
+              <button class="card__quick-view">Schnellansicht</button>
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">White Silence</h3>
+              <p class="card__desc">Weiße Eustoma — Symbol für Reinheit und Eleganz</p>
+              <div class="card__footer">
+                <span class="card__price">28,00 €</span>
+                <button class="card__add-btn js-add-to-cart" aria-label="In den Warenkorb">
+                  <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__img-wrap">
+              <img class="card__img" src="https://images.unsplash.com/photo-1507290439931-a861b5a38200?auto=format&fit=crop&w=500&q=80" alt="Wild Field">
+              <span class="card__badge card__badge--olive">Premium</span>
+              <button class="card__quick-view">Schnellansicht</button>
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Wild Field</h3>
+              <p class="card__desc">Feldstrauß — lebendige Poesie aus Wiesenblumen</p>
+              <div class="card__footer">
+                <span class="card__price">55,00 €</span>
+                <button class="card__add-btn js-add-to-cart" aria-label="In den Warenkorb">
+                  <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS ─────────────────────────────── -->
+    <section class="section benefits">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-label">Warum wir</span>
+          <h2 class="section-title">Unsere Vorteile</h2>
+        </div>
+        <div class="benefits__grid">
+
+          <div class="benefit">
+            <div class="benefit__icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3 class="benefit__title">60 Min. Lieferung</h3>
+            <p class="benefit__text">Wir liefern Ihren Strauß innerhalb einer Stunde stadtweit</p>
+          </div>
+
+          <div class="benefit">
+            <div class="benefit__icon">
+              <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <h3 class="benefit__title">Foto vor Versand</h3>
+            <p class="benefit__text">Wir senden Ihnen ein Foto des fertigen Straußes vor der Lieferung</p>
+          </div>
+
+          <div class="benefit">
+            <div class="benefit__icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="benefit__title">Qualitätskontrolle</h3>
+            <p class="benefit__text">Jede Blume wird sorgfältig ausgewählt und geprüft</p>
+          </div>
+
+          <div class="benefit">
+            <div class="benefit__icon">
+              <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </div>
+            <h3 class="benefit__title">Mit Liebe gemacht</h3>
+            <p class="benefit__text">Jeder Strauß ist eine handgefertigte Arbeit unserer Floristen</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER ───────────────────────────── -->
+    <section class="cta-banner">
+      <div class="container">
+        <h2 class="cta-banner__title">Unsicher bei der Wahl?</h2>
+        <p class="cta-banner__subtitle">Schreiben Sie uns — wir finden den passenden Strauß für Ihren Anlass</p>
+        <a href="#" class="btn btn--outline-white btn--lg">Kontaktieren Sie uns</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+
+        <div class="footer__brand">
+          <div class="footer__logo">Blumen<span>&</span>Stil</div>
+          <p class="footer__tagline">Handgefertigte Sträuße mit Liebe. Wir bringen täglich Freude in Ihre Stadt.</p>
+        </div>
+
+        <div>
+          <h4 class="footer__nav-title">Katalog</h4>
+          <ul class="footer__nav-list">
+            <li><a href="#" class="footer__nav-link">Monosträuße</a></li>
+            <li><a href="#" class="footer__nav-link">Designer-Sträuße</a></li>
+            <li><a href="#" class="footer__nav-link">Trockenblumen</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__nav-title">Service</h4>
+          <ul class="footer__nav-list">
+            <li><a href="#" class="footer__nav-link">Lieferung</a></li>
+            <li><a href="#" class="footer__nav-link">Zahlung</a></li>
+            <li><a href="#" class="footer__nav-link">Rückgabe</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer__nav-title">Kontakt</h4>
+          <ul class="footer__nav-list">
+            <li><a href="tel:+49000000000" class="footer__nav-link">+49 000 000-00-00</a></li>
+            <li><a href="mailto:hallo@blumenstil.de" class="footer__nav-link">hallo@blumenstil.de</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Blumen & Stil. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="toast js-toast"></div>
+
+  <!-- JS -->
+  <script src="static/js/base.js"></script>
+
+</body>
+</html>

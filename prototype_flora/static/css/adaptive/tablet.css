@@ -1,0 +1,101 @@
+/* ============================================================
+   FLORA DELUXE — TABLET  (480px – 767px)
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+  :root {
+    --container-pad: var(--sp-5);
+  }
+
+  .section { padding-block: var(--sp-12); }
+  .section--lg { padding-block: var(--sp-16); }
+
+  /* Hero */
+  .hero__content {
+    padding: var(--sp-10) var(--sp-5);
+  }
+
+  .hero__title {
+    font-size: var(--text-2xl);
+  }
+
+  .hero__subtitle {
+    font-size: var(--text-base);
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--sp-4);
+  }
+
+  .hero__media-badge { display: none; }
+  .hero__scroll-hint { display: none; }
+
+  /* Categories: 1 col */
+  .categories__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cat-card {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Bestsellers: 2 col */
+  .bestsellers__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Benefits: 2 col */
+  .benefits__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Instagram: 3 col */
+  .insta-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .insta-item:nth-child(n+4) {
+    display: none;
+  }
+
+  /* Section header */
+  .section-title {
+    font-size: var(--text-2xl);
+  }
+
+  /* CTA */
+  .cta-banner__title {
+    font-size: var(--text-2xl);
+  }
+
+  /* Footer */
+  .footer__top {
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: var(--sp-4);
+    text-align: center;
+  }
+
+  .footer__bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* Cart drawer */
+  .cart-drawer {
+    width: 100%;
+  }
+
+  /* Wizard steps labels */
+  .wizard__step-label {
+    display: none;
+  }
+
+}

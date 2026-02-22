@@ -1,0 +1,15 @@
+/* ============================================================
+   FLORA DELUXE — DESKTOP LARGE  (>1400px)
+   ============================================================ */
+
+@media (min-width: 1400px) {
+
+  .hero__title {
+    font-size: 5.5rem;
+  }
+
+  .bestsellers__grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+}

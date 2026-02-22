@@ -1,0 +1,98 @@
+/* ============================================================
+   FLORA DELUXE — CSS VARIABLES
+   Design concept: "Structural Bloom"
+   ============================================================ */
+
+:root {
+
+  /* --- Colors: Base --- */
+  --color-bg:           #F2F0E9;  /* Almond Milk — основной фон */
+  --color-white:        #FFFFFF;  /* Paper White — карточки, инпуты */
+
+  /* --- Colors: Structure --- */
+  --color-olive:        #4B5320;  /* Olive Branch — хедер, футер, кнопки */
+  --color-olive-dark:   #2C3318;  /* Deep Green — наборный текст */
+  --color-olive-light:  rgba(75, 83, 32, 0.08);
+  --color-olive-border: rgba(75, 83, 32, 0.15);
+
+  --color-terra:        #C17C5F;  /* Terra Cotta — акценты, sale, hover */
+  --color-terra-light:  rgba(193, 124, 95, 0.12);
+
+  /* --- Colors: Typography --- */
+  --color-heading:      #1A1A1A;  /* Graphite */
+  --color-text:         #2C3318;  /* Deep Green */
+  --color-text-muted:   #7A7A6E;
+
+  /* --- Colors: UI --- */
+  --color-border:       rgba(75, 83, 32, 0.15);
+  --color-border-input: #CCCCCC;
+  --color-overlay:      rgba(26, 26, 26, 0.5);
+
+  /* --- Typography --- */
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Manrope', 'Inter', system-ui, sans-serif;
+
+  --text-xs:   0.75rem;   /* 12px */
+  --text-sm:   0.875rem;  /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-md:   1.125rem;  /* 18px */
+  --text-lg:   1.25rem;   /* 20px */
+  --text-xl:   1.5rem;    /* 24px */
+  --text-2xl:  2rem;      /* 32px */
+  --text-3xl:  2.75rem;   /* 44px */
+  --text-4xl:  3.5rem;    /* 56px */
+  --text-5xl:  4.5rem;    /* 72px */
+
+  --font-weight-normal:    400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+
+  --leading-tight:  1.15;
+  --leading-normal: 1.5;
+  --leading-loose:  1.75;
+
+  /* --- Spacing (8px base grid) --- */
+  --sp-1:  0.25rem;  /* 4px  */
+  --sp-2:  0.5rem;   /* 8px  */
+  --sp-3:  0.75rem;  /* 12px */
+  --sp-4:  1rem;     /* 16px */
+  --sp-5:  1.25rem;  /* 20px */
+  --sp-6:  1.5rem;   /* 24px */
+  --sp-8:  2rem;     /* 32px */
+  --sp-10: 2.5rem;   /* 40px */
+  --sp-12: 3rem;     /* 48px */
+  --sp-16: 4rem;     /* 64px */
+  --sp-20: 5rem;     /* 80px */
+  --sp-24: 6rem;     /* 96px */
+
+  /* --- Layout --- */
+  --container-max:    1400px;
+  --container-pad:    var(--sp-6);
+  --header-height:    64px;
+  --border-line:      1px solid var(--color-border);
+
+  /* --- Border Radius --- */
+  --radius-none: 0;
+  --radius-sm:   2px;
+  --radius-md:   4px;
+
+  /* --- Shadows --- */
+  --shadow-card:  0 2px 12px rgba(26, 26, 26, 0.08);
+  --shadow-hover: 0 6px 24px rgba(26, 26, 26, 0.14);
+  --shadow-drawer: -4px 0 32px rgba(26, 26, 26, 0.16);
+
+  /* --- Transitions --- */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+
+  /* --- Z-index layers --- */
+  --z-base:    1;
+  --z-dropdown: 100;
+  --z-drawer:  200;
+  --z-overlay: 190;
+  --z-header:  300;
+  --z-modal:   400;
+  --z-toast:   500;
+}

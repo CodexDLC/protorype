@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOTYP_MASTER — Ihr individuelles Design</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Anti-flash -->
+    <script>
+        (function () {
+            var saved = localStorage.getItem('master-proto-theme');
+            var prefer = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+            var theme = saved || prefer;
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+
+    <link id="theme-css" rel="stylesheet" href="static/css/app.css">
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <header style="padding: 32px 0; position: absolute; width: 100%; z-index: 10;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="brand-logo" id="brand-logo"
+                style="display: flex; align-items: baseline; font-family: var(--font-headings); font-size: 24px; font-weight: 700;">
+                <span style="color: var(--color-text-main);">IHR</span><span id="brand-dlc"
+                    style="color: var(--cyber-blue);">LOGO</span>
+                <span id="brand-tagline"
+                    style="position: absolute; left: 0; bottom: -18px; font-family: var(--font-mono); font-size: 9px; color: var(--cyber-blue); opacity: 0;"></span>
+            </div>
+            <div
+                style="display: flex; align-items: center; gap: 24px; font-family: var(--font-mono); font-size: 12px; color: var(--gray-400);">
+                <button class="theme-toggle" onclick="toggleTheme()"
+                    style="background:none; border:none; color:inherit; cursor:pointer;" id="theme-btn">[ * ]</button>
+                <div style="cursor: pointer;">[ DE / EN / RU ]</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating Dock -->
+    <nav class="floating-dock">
+        <a href="#" class="dock-link active">Startseite</a>
+        <a href="#features" class="dock-link">Schritte</a>
+        <a href="#contact" class="dock-link">Kontakt</a>
+        <a href="#contact" class="btn btn-primary"
+            style="padding: 10px 24px; font-size: 14px; border-radius: 100px;">Anfrage</a>
+    </nav>
+
+    <main>
+        <!-- Section 1: Hero -->
+        <section class="hero" id="hero-section">
+            <div class="hero-bg"></div>
+            <div class="hero-torch" id="hero-torch"></div>
+            <div class="container">
+                <span class="tech-label">SYSTEM_READY // V.1.0</span>
+                <h1 class="hero-title"
+                    style="font-size: clamp(40px, 8vw, 72px); line-height: 1.1; margin-bottom: 32px;">
+                    IHR PROTOTYP.<br>UNBEGRENZTE MÖGLICHKEITEN.
+                </h1>
+                <p style="font-size: 18px; color: var(--gray-400); margin-bottom: 48px; max-width: 600px;">
+                    Dies ist ein interaktiver Entwurf. Jedes Element, jede Farbe und jedes Layout kann exakt an Ihre Marke und Ihre Wünsche angepasst werden.
+                </p>
+                <div style="display: flex; gap: 16px;">
+                    <a href="#contact" class="btn btn-primary">PROJEKT STARTEN</a>
+                    <a href="#features" class="btn btn-secondary">MEHR ERFAHREN</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 2: Features (Z-Pattern) -->
+        <section id="features" class="container" style="padding: 80px 0;">
+            <!-- Step 01 -->
+            <div class="z-row" style="margin-bottom: 120px;">
+                <div class="z-text-block">
+                    <span class="tech-label">SCHRITT_01</span>
+                    <h2>Struktur & Layout</h2>
+                    <p style="color: var(--gray-400);">Wir erstellen das Fundament Ihres Projekts. Das Layout ist vollkommen flexibel – wir ordnen Blöcke so an, wie es für Ihre Nutzer am besten funktioniert.</p>
+                </div>
+                <div class="z-visual">
+                    <div style="font-family: var(--font-mono); color: var(--gray-600);">[ LAYOUT_ENGINE ]</div>
+                </div>
+            </div>
+
+            <!-- Step 02 (Reverse) -->
+            <div class="z-row reverse" style="margin-bottom: 120px;">
+                <div class="z-text-block">
+                    <span class="tech-label">SCHRITT_02</span>
+                    <h2>Farben & Branding</h2>
+                    <p style="color: var(--gray-400);">Die visuelle Identität wird individuell entwickelt. Wir passen die Farbpalette, Typografie und Grafiken an Ihr Corporate Design oder Ihre persönlichen Vorlieben an.</p>
+                </div>
+                <div class="z-visual blue-accent">
+                    <div class="z-visual-accent"></div>
+                    <div style="font-family: var(--font-mono); color: var(--gray-600); position: relative; z-index: 2;">[ BRANDING_MODULE ]</div>
+                </div>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="z-row">
+                <div class="z-text-block">
+                    <span class="tech-label">SCHRITT_03</span>
+                    <h2>Ideen & Umsetzung</h2>
+                    <p style="color: var(--gray-400);">Von der ersten Idee bis zum fertigen Produkt. Dieser Prototyp dient als Basis, die wir mit Ihren Inhalten und Funktionen füllen, um eine einzigartige Lösung zu schaffen.</p>
+                </div>
+                <div class="z-visual">
+                    <div style="font-family: var(--font-mono); color: var(--gray-600);">[ FINAL_EXECUTION ]</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider"></div>
+
+        <!-- Section 3: Contact Form -->
+        <section id="contact" class="container" style="padding: 100px 0;">
+            <div class="bento-card" style="max-width: 800px; margin: 0 auto; padding: 60px;">
+                <span class="tech-label">KONTAKT</span>
+                <h2 style="margin-bottom: 32px;">Bereit für Ihr Projekt?</h2>
+                <form style="display: flex; flex-direction: column; gap: 24px;">
+                    <div>
+                        <label style="font-family: var(--font-mono); font-size: 12px; color: var(--gray-400); display: block; margin-bottom: 8px;">NAME</label>
+                        <input type="text" class="terminal-input" placeholder="Ihr Name hier...">
+                    </div>
+                    <div>
+                        <label style="font-family: var(--font-mono); font-size: 12px; color: var(--gray-400); display: block; margin-bottom: 8px;">EMAIL</label>
+                        <input type="email" class="terminal-input" placeholder="ihre@email.de">
+                    </div>
+                    <div>
+                        <label style="font-family: var(--font-mono); font-size: 12px; color: var(--gray-400); display: block; margin-bottom: 8px;">NACHRICHT</label>
+                        <textarea class="terminal-input" rows="4" placeholder="Beschreiben Sie Ihre Idee..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="margin-top: 20px; width: fit-content;">ANFRAGE SENDEN</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="island-footer">
+        <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px;">
+            <div>
+                <div style="font-family: var(--font-headings); font-size: 24px; font-weight: 700; margin-bottom: 16px;">
+                    LOGO<span style="color: var(--cyber-blue);">PROTO</span>
+                </div>
+                <p style="color: var(--gray-400); font-size: 14px; max-width: 300px;">Ihr Partner für moderne Web-Prototypen und individuelles Design. Alles ist anpassbar.</p>
+            </div>
+            <div style="display: flex; gap: 60px;">
+                <ul style="list-style:none; color: var(--gray-400); font-size: 14px; line-height: 2;">
+                    <li><b style="color: var(--gray-600); font-family: var(--font-mono); font-size: 11px;">MENÜ</b></li>
+                    <li>Startseite</li>
+                    <li>Schritte</li>
+                    <li>Kontakt</li>
+                </ul>
+            </div>
+        </div>
+        <div class="island-footer-bottom">
+            <span>© 2024 PROTOTYP_MASTER</span>
+            <span>DESIGNED_FOR_PERFORMANCE</span>
+        </div>
+    </footer>
+
+    <!-- LOGIC: Theme & Animations -->
+    <script>
+        var DARK_CSS = 'static/css/app.css';
+        var LIGHT_CSS = 'static/css/app-light.css';
+        var themeLink = document.getElementById('theme-css');
+        var themeBtn = document.getElementById('theme-btn');
+
+        function toggleTheme() {
+            var current = document.documentElement.getAttribute('data-theme');
+            if (current === 'light') {
+                document.documentElement.removeAttribute('data-theme');
+                themeLink.href = DARK_CSS;
+                themeBtn.textContent = '[ L ]';
+                localStorage.setItem('master-proto-theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeLink.href = LIGHT_CSS;
+                themeBtn.textContent = '[ D ]';
+                localStorage.setItem('master-proto-theme', 'light');
+            }
+        }
+
+        // Init button text
+        (function () {
+            var current = document.documentElement.getAttribute('data-theme');
+            themeBtn.textContent = (current === 'light') ? '[ D ]' : '[ L ]';
+            if (current === 'light') themeLink.href = LIGHT_CSS;
+        })();
+
+        // Torch Effect logic
+        (function () {
+            var hero = document.getElementById('hero-section');
+            var torch = document.getElementById('hero-torch');
+            if (hero && torch) {
+                hero.addEventListener('mousemove', function (e) {
+                    var r = hero.getBoundingClientRect();
+                    torch.style.left = (e.clientX - r.left) + 'px';
+                    torch.style.top = (e.clientY - r.top) + 'px';
+                });
+                hero.addEventListener('mouseenter', function () { torch.style.opacity = '1'; });
+                hero.addEventListener('mouseleave', function () { torch.style.opacity = '0'; });
+            }
+        })();
+
+        // Logo Taglines Animation (German)
+        (function () {
+            var taglineEl = document.getElementById('brand-tagline');
+            var tags = ['Ihr Design', 'Ihre Ideen', 'Ihr Prototyp'];
+            var current = 0;
+            if (!taglineEl) return;
+
+            function cycle() {
+                taglineEl.textContent = tags[current];
+                taglineEl.style.opacity = '0.7';
+                taglineEl.style.transform = 'translateY(0)';
+
+                setTimeout(function () {
+                    taglineEl.style.opacity = '0';
+                    taglineEl.style.transform = 'translateY(4px)';
+                    current = (current + 1) % tags.length;
+                    setTimeout(cycle, 1000);
+                }, 3000);
+            }
+            setTimeout(cycle, 1000);
+        })();
+    </script>
+</body>
+
+</html>

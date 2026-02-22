@@ -1,0 +1,124 @@
+/* ============================================================
+   FLORA DELUXE — BUTTONS
+   Style: "Строгий прямоугольник"
+   ============================================================ */
+
+/* --- Base --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-8);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--radius-none);
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* --- Primary (Olive) --- */
+.btn--primary {
+  background: var(--color-olive);
+  color: #fff;
+  border: 1px solid var(--color-olive);
+}
+
+.btn--primary:hover {
+  background: var(--color-olive-dark);
+  border-color: var(--color-olive-dark);
+}
+
+/* --- Primary Terra (акцент) --- */
+.btn--terra {
+  background: var(--color-terra);
+  color: #fff;
+  border: 1px solid var(--color-terra);
+}
+
+.btn--terra:hover {
+  background: #a8674d;
+  border-color: #a8674d;
+}
+
+/* --- Outline (Olive) --- */
+.btn--outline {
+  background: transparent;
+  color: var(--color-olive);
+  border: 1px solid var(--color-olive);
+}
+
+.btn--outline:hover {
+  background: var(--color-olive);
+  color: #fff;
+}
+
+/* --- Outline White (на тёмном фоне) --- */
+.btn--outline-white {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+.btn--outline-white:hover {
+  background: #fff;
+  color: var(--color-olive);
+  border-color: #fff;
+}
+
+/* --- Ghost / Text link --- */
+.btn--ghost {
+  background: transparent;
+  color: var(--color-olive);
+  border: 1px solid transparent;
+  padding-inline: 0;
+  border-bottom: 1px solid var(--color-olive);
+  border-radius: 0;
+  letter-spacing: 0.06em;
+}
+
+.btn--ghost:hover {
+  color: var(--color-terra);
+  border-bottom-color: var(--color-terra);
+}
+
+/* --- Sizes --- */
+.btn--sm {
+  padding: var(--sp-2) var(--sp-5);
+  font-size: var(--text-xs);
+}
+
+.btn--lg {
+  padding: var(--sp-4) var(--sp-10);
+  font-size: var(--text-base);
+}
+
+.btn--full {
+  width: 100%;
+}
+
+/* --- Icon button --- */
+.btn--icon {
+  padding: var(--sp-3);
+  width: 44px;
+  height: 44px;
+}
+
+.btn--icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+/* --- Loading state --- */
+.btn.is-loading {
+  pointer-events: none;
+  opacity: 0.7;
+}

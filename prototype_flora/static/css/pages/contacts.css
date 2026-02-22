@@ -1,0 +1,78 @@
+/* ============================================================
+   FLORA DELUXE — CONTACTS PAGE
+   ============================================================ */
+
+.contacts-hero {
+  background: var(--color-olive);
+  padding-block: var(--sp-20);
+  border-bottom: var(--border-line);
+}
+
+.contacts-hero__title {
+  font-size: var(--text-4xl);
+  color: #fff;
+  margin-bottom: var(--sp-4);
+}
+
+.contacts-hero__subtitle {
+  font-size: var(--text-md);
+  color: rgba(255,255,255,0.7);
+  max-width: 480px;
+}
+
+/* --- Layout --- */
+.contacts-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: var(--border-line);
+}
+
+.contacts-info {
+  padding: var(--sp-16);
+  border-right: var(--border-line);
+}
+
+.contacts-form-wrap {
+  padding: var(--sp-16);
+}
+
+/* --- Info blocks --- */
+.contact-block {
+  padding-block: var(--sp-6);
+  border-bottom: var(--border-line);
+}
+
+.contact-block:last-child { border-bottom: none; }
+
+.contact-block__label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-terra);
+  margin-bottom: var(--sp-2);
+}
+
+.contact-block__value {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  color: var(--color-heading);
+}
+
+.contact-block__sub {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--sp-1);
+}
+
+/* Map placeholder */
+.contacts-map {
+  height: 400px;
+  background: var(--color-olive-light);
+  border-top: var(--border-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}

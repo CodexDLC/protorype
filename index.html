@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROTOTYPE_HUB — Design-Konzepte</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card-bg: #161616;
+            --text: #ffffff;
+            --text-muted: #a1a1aa;
+            --primary: #00f0ff;
+            --secondary: #ff007a;
+            --accent: #00ff66;
+            --font-main: 'Inter', sans-serif;
+            --font-head: 'Space Grotesk', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .header { text-align: center; margin-bottom: 60px; }
+        .header h1 { font-family: var(--font-head); font-size: 3rem; margin-bottom: 10px; letter-spacing: -1px; }
+        .header p { color: var(--text-muted); font-size: 1.1rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid #27272a;
+            border-radius: 24px;
+            padding: 40px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 240, 255, 0.1);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover::before { opacity: 1; }
+
+        .card h2 { font-family: var(--font-head); font-size: 1.8rem; margin-bottom: 15px; }
+        .card p { color: var(--text-muted); line-height: 1.6; margin-bottom: 30px; }
+
+        .tag {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 12px;
+            border-radius: 100px;
+            background: #27272a;
+            width: fit-content;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+        }
+
+        .btn svg { width: 20px; height: 20px; transition: transform 0.3s; }
+        .card:hover .btn svg { transform: translateX(5px); }
+
+        @media (max-width: 640px) {
+            .header h1 { font-size: 2.2rem; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>DESIGN_PROTOTYPES</h1>
+        <p>Wählen Sie ein Konzept zur Vorschau aus</p>
+    </header>
+
+    <div class="grid">
+        <!-- Master Prototype -->
+        <a href="prototype_master/index.html" class="card">
+            <div>
+                <div class="tag" style="color: var(--primary);">Tech & Future</div>
+                <h2>Master Concept</h2>
+                <p>Ein hochmodernes, dunkles Design mit Cyber-Akzenten. Ideal für Tech-Startups, Agenturen oder SaaS-Produkte.</p>
+            </div>
+            <div class="btn">
+                Vorschau öffnen
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </div>
+        </a>
+
+        <!-- Flora Prototype -->
+        <a href="prototype_flora/index.html" class="card">
+            <div>
+                <div class="tag" style="color: var(--secondary);">Lifestyle & Boutique</div>
+                <h2>Blumen & Stil</h2>
+                <p>Ein elegantes, helles Design mit Fokus auf Ästhetik und E-Commerce. Perfekt für Boutiquen, Floristen oder Premium-Shops.</p>
+            </div>
+            <div class="btn">
+                Vorschau öffnen
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </div>
+        </a>
+
+        <!-- Energy Prototype -->
+        <a href="prototype_energy/index.html" class="card">
+            <div>
+                <div class="tag" style="color: var(--accent);">Industry & Engineering</div>
+                <h2>Energy Solutions</h2>
+                <p>Ein seriöses, korporatives Design für den B2B/B2C-Sektor. Fokus auf Vertrauen, Expertise und technische Präzision.</p>
+            </div>
+            <div class="btn">
+                Vorschau öffnen
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </div>
+        </a>
+    </div>
+
+</body>
+</html>

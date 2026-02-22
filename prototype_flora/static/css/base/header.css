@@ -1,0 +1,141 @@
+/* ============================================================
+   FLORA DELUXE — HEADER
+   ============================================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  height: var(--header-height);
+  background: var(--color-olive);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* --- Left: Burger + Catalog --- */
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+}
+
+.header__burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: var(--sp-2);
+  cursor: pointer;
+}
+
+.header__burger span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: #fff;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.header__burger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.header__burger.is-open span:nth-child(2) { opacity: 0; }
+.header__burger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.header__catalog-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  transition: color var(--transition-fast);
+}
+
+.header__catalog-label:hover {
+  color: #fff;
+}
+
+/* --- Center: Logo --- */
+.header__logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-normal);
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.header__logo span {
+  color: var(--color-terra);
+}
+
+/* --- Right: Actions --- */
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.header__action-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: rgba(255,255,255,0.8);
+  transition: color var(--transition-fast);
+  border-radius: var(--radius-sm);
+}
+
+.header__action-btn:hover {
+  color: #fff;
+}
+
+.header__action-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+/* Cart badge */
+.header__cart-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 16px;
+  height: 16px;
+  background: var(--color-terra);
+  color: #fff;
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-body);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* --- Promo bar (выше хедера, опционально) --- */
+.promo-bar {
+  background: var(--color-terra);
+  color: #fff;
+  text-align: center;
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.06em;
+  padding: var(--sp-2) var(--sp-4);
+}

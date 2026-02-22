@@ -1,0 +1,260 @@
+/* ============================================================
+   FLORA DELUXE — HOME PAGE
+   ============================================================ */
+
+/* --- Hero Boxed View --- */
+.hero {
+  padding-top: var(--sp-10);
+  padding-bottom: var(--sp-10);
+  background: var(--color-bg);
+}
+
+.hero__wrapper {
+  position: relative;
+  background: #fff;
+  border: var(--border-line);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 600px;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Картинка видна целиком */
+  object-position: right center; /* Девушка справа */
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 550px;
+  padding: var(--sp-16) var(--sp-12);
+}
+
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-terra);
+  margin-bottom: var(--sp-5);
+}
+
+.hero__eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--color-terra);
+}
+
+.hero__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  color: var(--color-heading);
+  margin-bottom: var(--sp-6);
+}
+
+.hero__subtitle {
+  font-size: var(--text-md);
+  color: var(--color-text-muted);
+  line-height: var(--leading-loose);
+  max-width: 380px;
+  margin-bottom: var(--sp-10);
+}
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
+}
+
+.hero__scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: var(--sp-10);
+}
+
+.hero__scroll-hint::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 40px;
+  background: var(--color-border);
+}
+
+.hero__media-badge {
+  position: absolute;
+  bottom: var(--sp-8);
+  right: var(--sp-8);
+  z-index: 3;
+  background: var(--color-white);
+  padding: var(--sp-4) var(--sp-5);
+  border: var(--border-line);
+  border-left: 3px solid var(--color-terra);
+  box-shadow: var(--shadow-card);
+}
+
+.hero__media-badge-text {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero__media-badge-value {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  color: var(--color-heading);
+}
+
+/* --- Categories Section --- */
+.categories {
+  background: var(--color-bg);
+}
+
+.categories__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: var(--border-line);
+  border-left: var(--border-line);
+}
+
+.categories__grid .cat-card {
+  border-right: var(--border-line);
+  border-bottom: var(--border-line);
+}
+
+/* --- Bestsellers Section --- */
+.bestsellers {
+  background: var(--color-white);
+  border-top: var(--border-line);
+  border-bottom: var(--border-line);
+}
+
+.bestsellers__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-left: var(--border-line);
+  border-top: var(--border-line);
+  margin-top: var(--sp-10);
+}
+
+.bestsellers__grid .card {
+  border-right: var(--border-line);
+  border-bottom: var(--border-line);
+  border-top: none;
+  border-left: none;
+}
+
+/* --- Benefits --- */
+.benefits {
+  background: var(--color-bg);
+  border-bottom: var(--border-line);
+}
+
+.benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-left: var(--border-line);
+  border-top: var(--border-line);
+  margin-top: var(--sp-10);
+}
+
+.benefits__grid .benefit {
+  border-right: var(--border-line);
+  border-bottom: var(--border-line);
+}
+
+/* --- Instagram Feed block --- */
+.insta-feed {
+  background: var(--color-bg);
+}
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  border: var(--border-line);
+  margin-top: var(--sp-10);
+}
+
+.insta-item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-right: var(--border-line);
+  cursor: pointer;
+}
+
+.insta-item:last-child { border-right: none; }
+
+.insta-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.insta-item:hover .insta-item__img {
+  transform: scale(1.06);
+}
+
+.insta-item__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(75,83,32,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.insta-item:hover .insta-item__overlay {
+  opacity: 1;
+}
+
+.insta-item__icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 1.5;
+}
+
+/* --- CTA Banner --- */
+.cta-banner {
+  background: var(--color-olive);
+  color: #fff;
+  padding-block: var(--sp-20);
+  text-align: center;
+}
+
+.cta-banner__title {
+  font-size: var(--text-4xl);
+  color: #fff;
+  margin-bottom: var(--sp-4);
+}
+
+.cta-banner__subtitle {
+  font-size: var(--text-md);
+  color: rgba(255,255,255,0.7);
+  margin-bottom: var(--sp-8);
+}

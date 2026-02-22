@@ -1,0 +1,162 @@
+/* ============================================================
+   FLORA DELUXE — FORMS
+   Style: Boxed inputs
+   ============================================================ */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.form-label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+}
+
+.form-label--required::after {
+  content: ' *';
+  color: var(--color-terra);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--color-white);
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-none);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  transition: border-color var(--transition-fast);
+  appearance: none;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-olive);
+  box-shadow: 0 0 0 3px var(--color-olive-light);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-text-muted);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%232C3318' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--sp-4) center;
+  padding-right: var(--sp-10);
+  cursor: pointer;
+}
+
+/* Error state */
+.form-input.is-error,
+.form-textarea.is-error,
+.form-select.is-error {
+  border-color: var(--color-terra);
+}
+
+.form-error {
+  font-size: var(--text-xs);
+  color: var(--color-terra);
+}
+
+.form-hint {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* --- Checkbox & Radio --- */
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  cursor: pointer;
+}
+
+.form-check__input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  border: 1px solid var(--color-border-input);
+  border-radius: var(--radius-none);
+  background: var(--color-white);
+  appearance: none;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+  position: relative;
+}
+
+.form-check__input:checked {
+  background: var(--color-olive);
+  border-color: var(--color-olive);
+}
+
+.form-check__input:checked::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 6px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.form-check__label {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: var(--leading-normal);
+}
+
+/* --- Search bar --- */
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border-input);
+  background: var(--color-white);
+}
+
+.search-bar__input {
+  flex: 1;
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--text-base);
+  border: none;
+  background: transparent;
+}
+
+.search-bar__btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.search-bar__btn:hover {
+  color: var(--color-olive);
+}
+
+.search-bar__btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+}

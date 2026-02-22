@@ -1,0 +1,68 @@
+/* ============================================================
+   FLORA DELUXE — MOBILE  (<480px)
+   ============================================================ */
+
+@media (max-width: 479px) {
+
+  :root {
+    --container-pad: var(--sp-4);
+    --header-height: 52px;
+  }
+
+  .section { padding-block: var(--sp-10); }
+
+  /* Hero */
+  .hero__title {
+    font-size: 1.75rem;
+  }
+
+  .hero__media {
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Products: 1 col on very small */
+  .bestsellers__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Benefits: 1 col */
+  .benefits__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Insta: 2 col */
+  .insta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .insta-item:nth-child(n+3) {
+    display: none;
+  }
+
+  /* Section title */
+  .section-title {
+    font-size: var(--text-xl);
+  }
+
+  .cta-banner__title {
+    font-size: var(--text-xl);
+  }
+
+  /* Header: скрыть лишнее */
+  .header__action-btn.js-search-btn {
+    display: none;
+  }
+
+  /* Footer tagline */
+  .footer__tagline {
+    display: none;
+  }
+
+  /* Wizard: compact dots */
+  .wizard__step-dot {
+    width: 28px;
+    height: 28px;
+    font-size: var(--text-xs);
+  }
+
+}
