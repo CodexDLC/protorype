@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Auto-Inv Core V4.0.2</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ffd900",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#0a0a0a",
+                        "slate-custom": "#1a1a1a",
+                        "grey-custom": "#2a2a2a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .grid-lines {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 217, 0, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 217, 0, 0.05) 1px, transparent 1px);
+        }
+
+        .border-thin {
+            border: 1px solid rgba(255, 217, 0, 0.2);
+        }
+
+        .border-accent {
+            border: 1px solid #ffd900;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-slate-100 font-display selection:bg-primary selection:text-black">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden grid-lines">
+        <!-- Header / TopNavBar -->
+        <header
+            class="flex items-center justify-between border-b border-primary/30 bg-background-dark/80 backdrop-blur-md px-6 py-4 sticky top-0 z-50">
+            <div class="flex items-center gap-10">
+                <a href="../index.html" class="flex items-center gap-3">
+                    <div class="bg-primary p-1 text-black">
+                        <span class="material-symbols-outlined text-2xl font-bold">precision_manufacturing</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h2 class="text-primary text-lg font-bold leading-none tracking-tighter uppercase">Auto-Inv Core
+                        </h2>
+                        <span class="text-[10px] text-primary/60 font-mono tracking-widest">v4.0.2 / SECTOR-07</span>
+                    </div>
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center gap-6 uppercase text-xs font-bold tracking-widest">
+                <a class="hover:text-primary transition-colors" href="../index.html">Home</a>
+                <a class="hover:text-primary transition-colors" href="../terminal/index.html">Terminal</a>
+                <a class="text-primary border-b border-primary pb-1" href="index.html">Inventory</a>
+                <a class="hover:text-primary transition-colors" href="../analytics/index.html">Analytics</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <div class="relative hidden sm:block">
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary/50 text-sm">search</span>
+                    <input
+                        class="bg-slate-custom border border-primary/20 text-xs font-mono py-2 pl-9 pr-4 focus:border-primary focus:ring-0 w-64 uppercase"
+                        placeholder="QUERY DATABASE..." type="text" />
+                </div>
+                <div class="flex gap-1">
+                    <button class="border border-primary/20 p-2 hover:bg-primary hover:text-black transition-all">
+                        <span class="material-symbols-outlined text-xl">notifications</span>
+                    </button>
+                    <button class="border border-primary/20 p-2 hover:bg-primary hover:text-black transition-all">
+                        <span class="material-symbols-outlined text-xl">settings_input_component</span>
+                    </button>
+                </div>
+                <div class="w-10 h-10 border border-primary/40 bg-grey-custom flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary">account_circle</span>
+                </div>
+            </div>
+        </header>
+        <main class="flex-1 p-6 space-y-6">
+            <!-- Page Title Area -->
+            <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 border-l-4 border-primary pl-4">
+                <div>
+                    <h1 class="text-4xl font-black uppercase tracking-tighter leading-none">Inventory Control</h1>
+                    <p class="text-primary/60 font-mono text-sm mt-2 uppercase">Main Warehouse &gt; High-Tech Service
+                        Hub &gt; Bay 4</p>
+                </div>
+                <div class="flex gap-2">
+                    <div class="bg-primary/10 border border-primary/30 px-4 py-2 flex flex-col items-end">
+                        <span class="text-[10px] uppercase font-bold text-primary/50">System Load</span>
+                        <span class="font-mono text-xl text-primary">42.8%</span>
+                    </div>
+                    <div class="bg-primary/10 border border-primary/30 px-4 py-2 flex flex-col items-end">
+                        <span class="text-[10px] uppercase font-bold text-primary/50">Active Ops</span>
+                        <span class="font-mono text-xl text-primary">14</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Dashboard Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                <!-- Section 2: Critical Stock Alerts (Highlighted) -->
+                <section class="lg:col-span-1 space-y-4">
+                    <h3
+                        class="flex items-center gap-2 text-xs font-bold tracking-[0.2em] uppercase text-primary/80 mb-4">
+                        <span class="w-2 h-2 bg-primary animate-pulse"></span>
+                        Critical Stock Alerts
+                    </h3>
+                    <div class="space-y-2">
+                        <div
+                            class="bg-primary text-black p-4 flex justify-between items-center group cursor-pointer hover:translate-x-1 transition-transform">
+                            <div>
+                                <p class="text-[10px] font-bold uppercase leading-none opacity-70">Brake Assembly X2</p>
+                                <p class="text-lg font-black leading-none mt-1">QTY: 02</p>
+                            </div>
+                            <span class="material-symbols-outlined font-bold">warning</span>
+                        </div>
+                        <div
+                            class="bg-primary text-black p-4 flex justify-between items-center group cursor-pointer hover:translate-x-1 transition-transform">
+                            <div>
+                                <p class="text-[10px] font-bold uppercase leading-none opacity-70">Synthetic Lube G9</p>
+                                <p class="text-lg font-black leading-none mt-1">QTY: 08L</p>
+                            </div>
+                            <span class="material-symbols-outlined font-bold">priority_high</span>
+                        </div>
+                        <div
+                            class="bg-primary text-black p-4 flex justify-between items-center group cursor-pointer hover:translate-x-1 transition-transform opacity-50">
+                            <div>
+                                <p class="text-[10px] font-bold uppercase leading-none opacity-70">Micro-Chip A14</p>
+                                <p class="text-lg font-black leading-none mt-1">OUT OF STOCK</p>
+                            </div>
+                            <span class="material-symbols-outlined font-bold">block</span>
+                        </div>
+                    </div>
+                    <div class="border border-primary/20 p-4 bg-slate-custom/50">
+                        <h4 class="text-[10px] font-bold uppercase tracking-widest text-primary mb-3">Warehouse Capacity
+                        </h4>
+                        <div class="w-full h-8 bg-grey-custom border border-primary/10 relative overflow-hidden">
+                            <div class="h-full bg-primary" style="width: 84%"></div>
+                            <span
+                                class="absolute right-2 top-1/2 -translate-y-1/2 font-mono text-xs text-black font-bold">84%</span>
+                        </div>
+                        <p class="text-[10px] font-mono text-primary/40 mt-2 uppercase text-right">3,490 / 4,150 Units
+                        </p>
+                    </div>
+                </section>
+                <!-- Section 1: Parts Inventory Table -->
+                <section class="lg:col-span-3 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <h3 class="text-xs font-bold tracking-[0.2em] uppercase text-primary/80">Parts Inventory Table
+                        </h3>
+                        <div class="flex gap-2">
+                            <button
+                                class="bg-primary px-3 py-1 text-black text-[10px] font-bold uppercase hover:bg-primary/80">Export
+                                CSV</button>
+                            <button
+                                class="border border-primary px-3 py-1 text-primary text-[10px] font-bold uppercase hover:bg-primary/10">Add
+                                Entry</button>
+                        </div>
+                    </div>
+                    <div class="border border-primary/20 bg-slate-custom/30 overflow-x-auto">
+                        <table class="w-full text-left font-mono text-xs uppercase border-collapse">
+                            <thead>
+                                <tr class="bg-primary/10 border-b border-primary/20">
+                                    <th class="p-4 font-bold text-primary">ID_HASH</th>
+                                    <th class="p-4 font-bold text-primary">NAME_STRING</th>
+                                    <th class="p-4 font-bold text-primary">CAT_TYPE</th>
+                                    <th class="p-4 font-bold text-primary text-center">STOCK_LVL</th>
+                                    <th class="p-4 font-bold text-primary">LOC_INDEX</th>
+                                    <th class="p-4 font-bold text-primary">STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-primary/10">
+                                <tr class="hover:bg-primary/5 transition-colors">
+                                    <td class="p-4 text-primary/60">#AX-9021</td>
+                                    <td class="p-4 font-bold">Titanium Strut Mount</td>
+                                    <td class="p-4">Suspension</td>
+                                    <td class="p-4 text-center">42</td>
+                                    <td class="p-4">B-04-12</td>
+                                    <td class="p-4"><span
+                                            class="px-2 py-0.5 bg-green-900/30 text-green-500 border border-green-500/50">STABLE</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-primary/5 transition-colors">
+                                    <td class="p-4 text-primary/60">#EN-1102</td>
+                                    <td class="p-4 font-bold">Fuel Injector Gen 4</td>
+                                    <td class="p-4">Engine Components</td>
+                                    <td class="p-4 text-center">15</td>
+                                    <td class="p-4">A-01-09</td>
+                                    <td class="p-4"><span
+                                            class="px-2 py-0.5 bg-primary/20 text-primary border border-primary/50">REORDER</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-primary/5 transition-colors">
+                                    <td class="p-4 text-primary/60">#TR-8843</td>
+                                    <td class="p-4 font-bold">Ceramic Clutch Plate</td>
+                                    <td class="p-4">Transmission</td>
+                                    <td class="p-4 text-center">112</td>
+                                    <td class="p-4">C-09-22</td>
+                                    <td class="p-4"><span
+                                            class="px-2 py-0.5 bg-green-900/30 text-green-500 border border-green-500/50">STABLE</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-primary/5 transition-colors">
+                                    <td class="p-4 text-primary/60">#EL-0041</td>
+                                    <td class="p-4 font-bold">Li-Ion Battery Cell</td>
+                                    <td class="p-4">Electrical</td>
+                                    <td class="p-4 text-center">204</td>
+                                    <td class="p-4">H-12-01</td>
+                                    <td class="p-4"><span
+                                            class="px-2 py-0.5 bg-green-900/30 text-green-500 border border-green-500/50">STABLE</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-primary/5 transition-colors">
+                                    <td class="p-4 text-primary/60">#BR-3329</td>
+                                    <td class="p-4 font-bold">Caliper Bolt Kit</td>
+                                    <td class="p-4">Braking</td>
+                                    <td class="p-4 text-center text-primary font-bold">03</td>
+                                    <td class="p-4">D-02-14</td>
+                                    <td class="p-4"><span
+                                            class="px-2 py-0.5 bg-red-900/30 text-red-500 border border-red-500/50">CRITICAL</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-primary/5 transition-colors">
+                                    <td class="p-4 text-primary/60">#CH-7712</td>
+                                    <td class="p-4 font-bold">Alloy Frame Rivets</td>
+                                    <td class="p-4">Chassis</td>
+                                    <td class="p-4 text-center">1,200</td>
+                                    <td class="p-4">S-01-44</td>
+                                    <td class="p-4"><span
+                                            class="px-2 py-0.5 bg-green-900/30 text-green-500 border border-green-500/50">STABLE</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+            <!-- Bottom Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Section 3: Recent Parts Movements Log -->
+                <section class="lg:col-span-2 space-y-4">
+                    <h3 class="text-xs font-bold tracking-[0.2em] uppercase text-primary/80">Movement Log_</h3>
+                    <div
+                        class="border border-primary/20 bg-black p-4 font-mono text-[11px] h-[240px] overflow-y-auto space-y-1">
+                        <div class="text-primary/40">[2023-10-27 14:22:01] <span class="text-green-500">INBOUND:</span>
+                            PART #AX-9021 (QTY 50) RECEIVED BY USER_09</div>
+                        <div class="text-primary/40">[2023-10-27 14:18:45] <span class="text-red-500">OUTBOUND:</span>
+                            PART #BR-3329 (QTY 02) ASSIGNED TO SERVICE_BAY_04</div>
+                        <div class="text-primary/40">[2023-10-27 14:05:12] <span class="text-primary">TRANSFER:</span>
+                            PART #EL-0041 MOVED FROM SEC_H1 TO SEC_H2</div>
+                        <div class="text-primary/40">[2023-10-27 13:44:30] <span class="text-green-500">INBOUND:</span>
+                            PART #TR-8843 (QTY 20) RECEIVED BY USER_14</div>
+                        <div class="text-primary/40">[2023-10-27 13:12:09] <span class="text-red-500">OUTBOUND:</span>
+                            PART #EN-1102 (QTY 01) ASSIGNED TO SERVICE_BAY_11</div>
+                        <div class="text-primary/40">[2023-10-27 12:55:55] <span class="text-primary">SYSTEM:</span>
+                            AUTOMATED REORDER TRIGGERED FOR #BR-3329</div>
+                        <div class="text-primary/40">[2023-10-27 12:30:11] <span class="text-primary">TRANSFER:</span>
+                            PART #CH-7712 MOVED FROM BULK_STORAGE TO QUICK_PICK</div>
+                        <div class="text-primary/40">[2023-10-27 12:15:00] <span class="text-green-500">INBOUND:</span>
+                            PART #CH-7712 (QTY 500) RECEIVED BY USER_09</div>
+                        <div class="text-primary/40 cursor-default animate-pulse">_ BLINKING CURSOR ... SYSTEM READY
+                        </div>
+                    </div>
+                </section>
+                <!-- Section 4: Warehouse Status Indicators -->
+                <section class="space-y-4">
+                    <h3 class="text-xs font-bold tracking-[0.2em] uppercase text-primary/80">Network Status</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div
+                            class="border border-primary/20 p-4 bg-slate-custom flex flex-col items-center justify-center space-y-2">
+                            <span class="material-symbols-outlined text-primary text-3xl">router</span>
+                            <span class="text-[10px] uppercase font-bold text-primary/60">Node Alpha</span>
+                            <span class="text-green-500 font-mono text-sm">ONLINE</span>
+                        </div>
+                        <div
+                            class="border border-primary/20 p-4 bg-slate-custom flex flex-col items-center justify-center space-y-2">
+                            <span class="material-symbols-outlined text-primary text-3xl">sensors</span>
+                            <span class="text-[10px] uppercase font-bold text-primary/60">IoT Grid</span>
+                            <span class="text-green-500 font-mono text-sm">ACTIVE</span>
+                        </div>
+                        <div
+                            class="border border-primary/20 p-4 bg-slate-custom flex flex-col items-center justify-center space-y-2">
+                            <span class="material-symbols-outlined text-primary text-3xl">database</span>
+                            <span class="text-[10px] uppercase font-bold text-primary/60">Sync Delay</span>
+                            <span class="text-primary font-mono text-sm">12ms</span>
+                        </div>
+                        <div
+                            class="border border-primary/20 p-4 bg-slate-custom flex flex-col items-center justify-center space-y-2">
+                            <span class="material-symbols-outlined text-primary text-3xl">lan</span>
+                            <span class="text-[10px] uppercase font-bold text-primary/60">Service Load</span>
+                            <span class="text-primary font-mono text-sm">MODERATE</span>
+                        </div>
+                    </div>
+                    <div class="bg-primary/5 border border-primary/30 p-4">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-[10px] uppercase font-bold">Bay Occupation</span>
+                            <span class="text-[10px] font-mono">14/16</span>
+                        </div>
+                        <div class="flex gap-1">
+                            <div class="flex-1 h-2 bg-primary"></div>
+                            <div class="flex-1 h-2 bg-primary"></div>
+                            <div class="flex-1 h-2 bg-primary"></div>
+                            <div class="flex-1 h-2 bg-primary"></div>
+                            <div class="flex-1 h-2 bg-primary"></div>
+                            <div class="flex-1 h-2 bg-primary"></div>
+                            <div class="flex-1 h-2 bg-primary"></div>
+                            <div class="flex-1 h-2 bg-primary"></div>
+                            <div class="flex-1 h-2 bg-primary"></div>
+                            <div class="flex-1 h-2 bg-primary"></div>
+                            <div class="flex-1 h-2 bg-primary"></div>
+                            <div class="flex-1 h-2 bg-primary"></div>
+                            <div class="flex-1 h-2 bg-primary"></div>
+                            <div class="flex-1 h-2 bg-primary"></div>
+                            <div class="flex-1 h-2 bg-grey-custom border border-primary/20"></div>
+                            <div class="flex-1 h-2 bg-grey-custom border border-primary/20"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <!-- Footer / Status Bar -->
+        <footer
+            class="border-t border-primary/20 bg-black px-6 py-2 flex justify-between items-center text-[10px] font-mono uppercase text-primary/40">
+            <div class="flex gap-4">
+                <span>LOCAL_TIME: 14:23:55</span>
+                <span>OS_ID: A-INV_KRNL_7.0</span>
+            </div>
+            <div class="flex gap-4">
+                <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 bg-green-500"></span> SECURE
+                    CONNECTION</span>
+                <span>SYSTEM ENCRYPTED: AES-256</span>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

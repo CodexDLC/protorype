@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tech-Auto Analytics v2.4.0</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ffd900",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#1a1a1a",
+                        "neutral-800": "#2e2e2e",
+                        "neutral-900": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-image:
+                linear-gradient(rgba(255, 217, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 217, 0, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .brutalist-border {
+            border: 1px solid #2e2e2e;
+        }
+
+        .header-border {
+            border-bottom: 1px solid #ffd900;
+        }
+
+        .mono-data {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-slate-100 font-display min-h-screen">
+    <div class="flex flex-col min-h-screen">
+        <!-- Top Navigation -->
+        <header class="flex items-center justify-between px-6 py-4 bg-neutral-900 border-b border-neutral-800">
+            <div class="flex items-center gap-12">
+                <a href="../index.html" class="flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-3xl">precision_manufacturing</span>
+                    <h1 class="text-xl font-bold tracking-tighter uppercase">Tech-Auto <span
+                            class="text-primary">OS</span></h1>
+                </a>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+                <a class="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors"
+                    href="../index.html">Home</a>
+                <a class="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors"
+                    href="../terminal/index.html">Terminal</a>
+                <a class="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors"
+                    href="../inventory/index.html">Inventory</a>
+                <a class="text-xs font-bold uppercase tracking-widest text-primary border-b border-primary pb-1"
+                    href="index.html">Analytics</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center bg-neutral-800 border border-neutral-700 px-3 py-1">
+                    <span class="material-symbols-outlined text-sm text-slate-500 mr-2">search</span>
+                    <input
+                        class="bg-transparent border-none focus:ring-0 text-xs font-mono w-48 text-slate-100 placeholder:text-slate-600 uppercase"
+                        placeholder="CMD_SEARCH..." type="text" />
+                </div>
+                <button
+                    class="bg-primary text-neutral-900 px-4 py-2 font-bold text-xs uppercase hover:bg-white transition-colors">
+                    System_Log
+                </button>
+            </div>
+        </header>
+        <main class="p-6 grid grid-cols-12 gap-6">
+            <!-- KPI Section -->
+            <div class="col-span-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Revenue Card -->
+                <div
+                    class="bg-neutral-900 border-l-4 border-l-primary brutalist-border p-5 flex flex-col justify-between">
+                    <div>
+                        <p class="text-[10px] uppercase font-bold tracking-widest text-slate-500 mb-1">
+                            Total_Revenue_FY24</p>
+                        <h2 class="text-3xl font-bold mono-data text-primary">$1,248,500.00</h2>
+                    </div>
+                    <div class="flex items-center gap-2 mt-4">
+                        <span class="material-symbols-outlined text-green-500 text-sm">trending_up</span>
+                        <span class="mono-data text-xs text-green-500">+12.4% vs_prev</span>
+                    </div>
+                </div>
+                <!-- AOV Card -->
+                <div class="bg-neutral-900 brutalist-border p-5 flex flex-col justify-between">
+                    <div>
+                        <p class="text-[10px] uppercase font-bold tracking-widest text-slate-500 mb-1">Avg_Order_Value
+                        </p>
+                        <h2 class="text-3xl font-bold mono-data">$842.50</h2>
+                    </div>
+                    <div class="flex items-center gap-2 mt-4">
+                        <span class="material-symbols-outlined text-red-500 text-sm">trending_down</span>
+                        <span class="mono-data text-xs text-red-500">-2.1% vs_prev</span>
+                    </div>
+                </div>
+                <!-- CAC Card -->
+                <div class="bg-neutral-900 brutalist-border p-5 flex flex-col justify-between">
+                    <div>
+                        <p class="text-[10px] uppercase font-bold tracking-widest text-slate-500 mb-1">Acquisition_Cost
+                        </p>
+                        <h2 class="text-3xl font-bold mono-data">$112.20</h2>
+                    </div>
+                    <div class="flex items-center gap-2 mt-4">
+                        <span class="material-symbols-outlined text-green-500 text-sm">check_circle</span>
+                        <span class="mono-data text-xs text-green-500">OPTIMIZED</span>
+                    </div>
+                </div>
+                <!-- Efficiency Card -->
+                <div class="bg-neutral-900 brutalist-border p-5 flex flex-col justify-between">
+                    <div>
+                        <p class="text-[10px] uppercase font-bold tracking-widest text-slate-500 mb-1">Tech_Efficiency
+                        </p>
+                        <h2 class="text-3xl font-bold mono-data">94.2%</h2>
+                    </div>
+                    <div class="flex items-center gap-2 mt-4">
+                        <div class="w-full bg-neutral-800 h-1">
+                            <div class="bg-primary h-1" style="width: 94.2%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Performance Charts -->
+            <div class="col-span-12 lg:col-span-8 grid grid-cols-1 gap-6">
+                <div class="bg-neutral-900 brutalist-border p-6">
+                    <div class="flex justify-between items-center mb-8">
+                        <h3 class="font-bold text-xs uppercase tracking-[0.2em] border-l-2 border-primary pl-3">
+                            Performance_Metrics / Service_Volume</h3>
+                        <div class="flex gap-4 mono-data text-[10px]">
+                            <span class="flex items-center gap-1"><span class="w-2 h-2 bg-primary"></span> ACTUAL</span>
+                            <span class="flex items-center gap-1"><span class="w-2 h-2 bg-neutral-700"></span>
+                                PROJECTED</span>
+                        </div>
+                    </div>
+                    <div class="h-[300px] w-full relative">
+                        <!-- Chart Mockup -->
+                        <svg class="w-full h-full" viewbox="0 0 800 300">
+                            <path d="M0,250 L100,220 L200,240 L300,150 L400,180 L500,80 L600,110 L700,40 L800,60"
+                                fill="none" stroke="#ffd900" stroke-width="2"></path>
+                            <path
+                                d="M0,250 L100,220 L200,240 L300,150 L400,180 L500,80 L600,110 L700,40 L800,60 V300 H0 Z"
+                                fill="url(#grad)" opacity="0.1"></path>
+                            <line stroke="#2e2e2e" stroke-dasharray="4" x1="0" x2="0" y1="0" y2="300"></line>
+                            <line stroke="#2e2e2e" stroke-dasharray="4" x1="200" x2="200" y1="0" y2="300"></line>
+                            <line stroke="#2e2e2e" stroke-dasharray="4" x1="400" x2="400" y1="0" y2="300"></line>
+                            <line stroke="#2e2e2e" stroke-dasharray="4" x1="600" x2="600" y1="0" y2="300"></line>
+                            <line stroke="#2e2e2e" stroke-dasharray="4" x1="0" x2="800" y1="150" y2="150"></line>
+                            <defs>
+                                <lineargradient id="grad" x1="0%" x2="0%" y1="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ffd900;stop-opacity:1"></stop>
+                                    <stop offset="100%" style="stop-color:#ffd900;stop-opacity:0"></stop>
+                                </lineargradient>
+                            </defs>
+                        </svg>
+                        <div class="flex justify-between mt-4 mono-data text-[10px] text-slate-500 uppercase">
+                            <span>WK_01</span>
+                            <span>WK_02</span>
+                            <span>WK_03</span>
+                            <span>WK_04</span>
+                            <span>WK_05</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-neutral-900 brutalist-border p-6">
+                        <h3 class="font-bold text-xs uppercase tracking-[0.2em] mb-6">Service_Comparison</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between text-[10px] mono-data uppercase mb-1">
+                                    <span>Engine_Tuning</span>
+                                    <span class="text-primary">420 Units</span>
+                                </div>
+                                <div class="w-full bg-neutral-800 h-4 border border-neutral-700">
+                                    <div class="bg-primary h-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-[10px] mono-data uppercase mb-1">
+                                    <span>Wheel_Alignment</span>
+                                    <span>312 Units</span>
+                                </div>
+                                <div class="w-full bg-neutral-800 h-4 border border-neutral-700">
+                                    <div class="bg-slate-500 h-full" style="width: 63%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-[10px] mono-data uppercase mb-1">
+                                    <span>Brake_System</span>
+                                    <span>198 Units</span>
+                                </div>
+                                <div class="w-full bg-neutral-800 h-4 border border-neutral-700">
+                                    <div class="bg-slate-500 h-full" style="width: 40%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-neutral-900 brutalist-border p-6 overflow-hidden">
+                        <h3 class="font-bold text-xs uppercase tracking-[0.2em] mb-6">System_Alerts</h3>
+                        <div class="space-y-3 mono-data text-[11px]">
+                            <div class="border-l-2 border-red-500 bg-red-500/10 p-2 flex justify-between items-center">
+                                <span class="text-red-500 uppercase">[CRITICAL] Bay_04 Overheat</span>
+                                <span class="text-slate-500">14:22:01</span>
+                            </div>
+                            <div class="border-l-2 border-primary bg-primary/10 p-2 flex justify-between items-center">
+                                <span class="text-primary uppercase">[WARN] Inventory_Low: Filter_X9</span>
+                                <span class="text-slate-500">13:45:12</span>
+                            </div>
+                            <div
+                                class="border-l-2 border-slate-500 bg-slate-500/10 p-2 flex justify-between items-center">
+                                <span class="text-slate-300 uppercase">[INFO] Tech_Login: ID_882</span>
+                                <span class="text-slate-500">12:10:55</span>
+                            </div>
+                            <div
+                                class="border-l-2 border-slate-500 bg-slate-500/10 p-2 flex justify-between items-center">
+                                <span class="text-slate-300 uppercase">[INFO] Backup_Completed</span>
+                                <span class="text-slate-500">00:00:01</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Sidebar: Resources & Finance -->
+            <div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+                <!-- Resource Allocation -->
+                <div class="bg-neutral-900 brutalist-border p-6 h-fit">
+                    <h3 class="font-bold text-xs uppercase tracking-[0.2em] mb-6">Bay_Status_Monitor</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="border border-primary bg-primary/5 p-4 flex flex-col gap-2">
+                            <span class="mono-data text-[10px] text-primary uppercase">Bay_01</span>
+                            <span class="text-xs font-bold uppercase">Active_Tuning</span>
+                            <span class="mono-data text-[10px] text-slate-500">TECH: MILLER.R</span>
+                            <div class="h-1 bg-primary w-2/3"></div>
+                        </div>
+                        <div class="border border-primary bg-primary/5 p-4 flex flex-col gap-2">
+                            <span class="mono-data text-[10px] text-primary uppercase">Bay_02</span>
+                            <span class="text-xs font-bold uppercase">Alignment_HD</span>
+                            <span class="mono-data text-[10px] text-slate-500">TECH: CHEN.W</span>
+                            <div class="h-1 bg-primary w-full"></div>
+                        </div>
+                        <div class="border border-neutral-700 p-4 flex flex-col gap-2">
+                            <span class="mono-data text-[10px] text-slate-500 uppercase">Bay_03</span>
+                            <span class="text-xs font-bold uppercase text-slate-500 italic">STANDBY</span>
+                            <span class="mono-data text-[10px] text-slate-700">TECH: NONE</span>
+                            <div class="h-1 bg-neutral-800 w-full"></div>
+                        </div>
+                        <div class="border border-red-900 bg-red-900/10 p-4 flex flex-col gap-2">
+                            <span class="mono-data text-[10px] text-red-500 uppercase">Bay_04</span>
+                            <span class="text-xs font-bold uppercase text-red-500">MAINTENANCE</span>
+                            <span class="mono-data text-[10px] text-slate-500">ERROR: SV_404</span>
+                            <div class="h-1 bg-red-900 w-full"></div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-bold text-[10px] uppercase tracking-[0.2em] mb-4 text-slate-500">
+                            Technician_Workload</h4>
+                        <div class="space-y-4 mono-data text-[11px]">
+                            <div class="flex justify-between items-center">
+                                <span>A_SANDOVAL</span>
+                                <div class="flex gap-1">
+                                    <div class="w-3 h-3 bg-primary"></div>
+                                    <div class="w-3 h-3 bg-primary"></div>
+                                    <div class="w-3 h-3 bg-primary"></div>
+                                    <div class="w-3 h-3 bg-neutral-800"></div>
+                                    <div class="w-3 h-3 bg-neutral-800"></div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span>J_KOWALSKI</span>
+                                <div class="flex gap-1">
+                                    <div class="w-3 h-3 bg-primary"></div>
+                                    <div class="w-3 h-3 bg-primary"></div>
+                                    <div class="w-3 h-3 bg-primary"></div>
+                                    <div class="w-3 h-3 bg-primary"></div>
+                                    <div class="w-3 h-3 bg-neutral-800"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Financial Summary -->
+                <div class="bg-neutral-900 brutalist-border p-6 h-fit">
+                    <h3 class="font-bold text-xs uppercase tracking-[0.2em] mb-6">Recent_Transactions_HV</h3>
+                    <div class="space-y-0 mono-data text-[11px]">
+                        <div
+                            class="grid grid-cols-4 py-3 border-b border-neutral-800 hover:bg-neutral-800/50 transition-colors">
+                            <span class="col-span-1 text-slate-500">TXN_982</span>
+                            <span class="col-span-2 uppercase font-bold text-slate-200">Stage_3 Tuning</span>
+                            <span class="col-span-1 text-right text-primary font-bold">$4,850</span>
+                        </div>
+                        <div
+                            class="grid grid-cols-4 py-3 border-b border-neutral-800 hover:bg-neutral-800/50 transition-colors">
+                            <span class="col-span-1 text-slate-500">TXN_981</span>
+                            <span class="col-span-2 uppercase font-bold text-slate-200">Full Exhaust</span>
+                            <span class="col-span-1 text-right text-primary font-bold">$2,200</span>
+                        </div>
+                        <div
+                            class="grid grid-cols-4 py-3 border-b border-neutral-800 hover:bg-neutral-800/50 transition-colors">
+                            <span class="col-span-1 text-slate-500">TXN_978</span>
+                            <span class="col-span-2 uppercase font-bold text-slate-200">ECU Remapping</span>
+                            <span class="col-span-1 text-right text-primary font-bold">$1,500</span>
+                        </div>
+                        <div
+                            class="grid grid-cols-4 py-3 border-b border-neutral-800 hover:bg-neutral-800/50 transition-colors">
+                            <span class="col-span-1 text-slate-500">TXN_974</span>
+                            <span class="col-span-2 uppercase font-bold text-slate-200">Dyno Testing</span>
+                            <span class="col-span-1 text-right text-primary font-bold">$850</span>
+                        </div>
+                        <div
+                            class="grid grid-cols-4 py-3 border-b border-neutral-800 hover:bg-neutral-800/50 transition-colors">
+                            <span class="col-span-1 text-slate-500">TXN_972</span>
+                            <span class="col-span-2 uppercase font-bold text-slate-200">Brake Upgrade</span>
+                            <span class="col-span-1 text-right text-primary font-bold">$3,120</span>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full mt-6 py-3 border border-neutral-700 text-[10px] uppercase font-bold tracking-widest hover:bg-primary hover:text-neutral-900 transition-all">
+                        View_All_Financial_Logs
+                    </button>
+                </div>
+            </div>
+        </main>
+        <footer
+            class="mt-auto px-6 py-4 bg-neutral-900 border-t border-neutral-800 flex justify-between items-center mono-data text-[10px] text-slate-500 uppercase tracking-widest">
+            <div>System_Status: <span class="text-green-500">ONLINE</span> // Latency: 12ms // CPU: 14%</div>
+            <div>© 2024 TECH-AUTO ANALYTICS v2.4.0</div>
+        </footer>
+    </div>
+</body>
+
+</html>

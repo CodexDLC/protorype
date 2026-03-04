@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Precision Auto - High-Tech Automotive Service</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ffd900",
+                        "background-light": "#f0f0f2", // Cold grey light
+                        "background-dark": "#0f1115", // Dark slate
+                        "surface-dark": "#16191f",
+                        "border-dark": "#2d333b",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["Space Mono", "monospace"],
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #2d333b 1px, transparent 1px), linear-gradient(to bottom, #2d333b 1px, transparent 1px)",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom grid background for the blueprint feel */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(45, 51, 59, 0.5) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(45, 51, 59, 0.5) 1px, transparent 1px);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased selection:bg-primary selection:text-background-dark">
+    <div class="min-h-screen flex flex-col relative overflow-hidden bg-grid">
+        <!-- Header -->
+        <header class="sticky top-0 z-50 w-full border-b border-border-dark bg-background-dark/95 backdrop-blur-sm">
+            <div class="px-6 h-16 flex items-center justify-between max-w-[1400px] mx-auto w-full">
+                <div class="flex items-center gap-3 group cursor-pointer">
+                    <div class="text-primary">
+                        <span class="material-symbols-outlined !text-3xl">precision_manufacturing</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-white text-lg font-bold tracking-tight leading-none uppercase">Precision Auto
+                        </h1>
+                        <span class="text-slate-400 text-[10px] font-mono tracking-widest leading-none mt-1">BERLIN.DE
+                            // EST.2024</span>
+                    </div>
+                </div>
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors uppercase tracking-wide"
+                        href="terminal/index.html">Terminal</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors uppercase tracking-wide"
+                        href="inventory/index.html">Inventory</a>
+                    <a class="text-sm font-medium text-slate-300 hover:text-primary transition-colors uppercase tracking-wide"
+                        href="analytics/index.html">Analytics</a>
+                </nav>
+                <div class="flex items-center gap-4">
+                    <div class="hidden lg:flex flex-col items-end text-right border-r border-border-dark pr-4">
+                        <span class="text-[10px] text-primary font-mono">STATUS: ONLINE</span>
+                        <span class="text-[10px] text-slate-400 font-mono">SERVER: EU-WEST-1</span>
+                    </div>
+                    <button
+                        class="bg-primary hover:bg-yellow-400 text-background-dark text-sm font-bold h-10 px-6 uppercase tracking-wider flex items-center gap-2 transition-colors">
+                        <span class="material-symbols-outlined text-lg">calendar_month</span>
+                        <span>Book Now</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content Wrapper -->
+        <main
+            class="flex-grow w-full max-w-[1400px] mx-auto flex flex-col border-x border-border-dark bg-background-dark/80">
+            <!-- Hero Section: Split Screen -->
+            <section class="grid grid-cols-1 lg:grid-cols-2 border-b border-border-dark min-h-[600px]">
+                <!-- Left: Visual -->
+                <div
+                    class="relative w-full h-full min-h-[400px] lg:min-h-full overflow-hidden border-b lg:border-b-0 lg:border-r border-border-dark group">
+                    <div class="absolute inset-0 bg-cover bg-center grayscale contrast-125 transition-transform duration-700 group-hover:scale-105"
+                        data-alt="Macro close-up of a ventilated high-performance car brake disc in black and white"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAWKHnZsGMW3mmdUvSyaMc1J6yHe557Mk6rXWBTolfqh2rzmmH_lZV-dtpAMRysdorcAXBJnyvTRLW5V50_HQHabb3Il_C0qvx2QEMAag6pNW3xGsRe1_To3QSErZQe1dEG1DcGFMY_zwEv0gmWsgA45bCowFTeo-tFFIlz5egBHGaWUJXjHGpgQAzHvTbeTSq_ZzswyZr6KPXmvJz7dx4IH2t5zehACoFqhxydVpHSt5ZoZHiAPWQWLa7pFDLrFksJQLWYdtHLOK4');">
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-90">
+                    </div>
+                    <!-- Overlay Text -->
+                    <div class="absolute bottom-0 left-0 p-8 lg:p-12 w-full">
+                        <div
+                            class="inline-flex items-center gap-2 border border-primary/30 bg-background-dark/50 backdrop-blur px-3 py-1 mb-6">
+                            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                            <span class="text-primary font-mono text-xs">SYSTEM READY</span>
+                        </div>
+                        <h2
+                            class="text-4xl lg:text-6xl font-bold text-white uppercase leading-none tracking-tight mb-4">
+                            Engineering <br /> Excellence
+                        </h2>
+                        <p
+                            class="text-slate-400 max-w-md font-mono text-sm leading-relaxed border-l-2 border-primary pl-4">
+                            Precision maintenance for high-performance vehicles. Real-time diagnostics, expert tuning,
+                            and factory-grade calibration in the heart of Berlin.
+                        </p>
+                    </div>
+                </div>
+                <!-- Right: Booking Form & Status -->
+                <div class="flex flex-col bg-surface-dark relative">
+                    <!-- Top Status Bar in Hero Right -->
+                    <div class="p-6 border-b border-border-dark bg-background-dark">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-white font-bold uppercase tracking-wider text-sm flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">sensors</span>
+                                Real-time Shop Occupancy
+                            </h3>
+                            <span class="font-mono text-xs text-slate-500">UPDATED: 14:02:45</span>
+                        </div>
+                        <!-- Status Metrics -->
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="p-3 border border-border-dark bg-background-dark/50">
+                                <span class="block text-[10px] font-mono text-slate-500 mb-1">CAPACITY</span>
+                                <div class="flex items-end gap-2">
+                                    <span class="text-xl font-bold text-white">78%</span>
+                                    <span class="text-[10px] text-green-500 font-mono mb-1">▲ HIGH</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-1 mt-2">
+                                    <div class="bg-primary h-1" style="width: 78%"></div>
+                                </div>
+                            </div>
+                            <div class="p-3 border border-border-dark bg-background-dark/50">
+                                <span class="block text-[10px] font-mono text-slate-500 mb-1">QUEUE</span>
+                                <div class="flex items-end gap-2">
+                                    <span class="text-xl font-bold text-white">04</span>
+                                    <span class="text-[10px] text-slate-400 font-mono mb-1">VEHICLES</span>
+                                </div>
+                            </div>
+                            <div class="p-3 border border-border-dark bg-background-dark/50">
+                                <span class="block text-[10px] font-mono text-slate-500 mb-1">WAIT EST.</span>
+                                <div class="flex items-end gap-2">
+                                    <span class="text-xl font-bold text-white">45m</span>
+                                    <span class="text-[10px] text-primary font-mono mb-1">AVG</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dynamic Booking Form -->
+                    <div class="flex-grow p-8 flex flex-col justify-center">
+                        <div class="mb-6">
+                            <h3 class="text-2xl font-bold text-white uppercase mb-2">Service Request</h3>
+                            <p class="text-slate-400 text-sm font-mono">Initialize a new service ticket. One of our
+                                engineers will confirm availability.</p>
+                        </div>
+                        <form class="space-y-5">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                <div class="space-y-1">
+                                    <label class="text-xs font-mono text-slate-400 uppercase">Vehicle Make /
+                                        Model</label>
+                                    <input
+                                        class="w-full bg-background-dark border border-border-dark text-white px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-slate-600"
+                                        placeholder="e.g. Porsche 911 GT3" type="text" />
+                                </div>
+                                <div class="space-y-1">
+                                    <label class="text-xs font-mono text-slate-400 uppercase">License Plate</label>
+                                    <input
+                                        class="w-full bg-background-dark border border-border-dark text-white px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-slate-600"
+                                        placeholder="B - XX 1234" type="text" />
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-mono text-slate-400 uppercase">Service Type</label>
+                                <select
+                                    class="w-full bg-background-dark border border-border-dark text-white px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none cursor-pointer">
+                                    <option>Standard Maintenance (Oil &amp; Filter)</option>
+                                    <option>Precision Alignment</option>
+                                    <option>Engine Tuning &amp; Diagnostics</option>
+                                    <option>Brake System Overhaul</option>
+                                </select>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-mono text-slate-400 uppercase">Preferred Date</label>
+                                <input
+                                    class="w-full bg-background-dark border border-border-dark text-white px-4 py-3 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all [color-scheme:dark]"
+                                    type="date" />
+                            </div>
+                            <button
+                                class="w-full bg-white hover:bg-slate-200 text-background-dark font-bold py-4 uppercase tracking-wider flex items-center justify-between px-6 group transition-colors mt-4"
+                                type="button">
+                                <span>Confirm Appointment</span>
+                                <span
+                                    class="material-symbols-outlined transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <!-- Stats Bar (Brutalist) -->
+            <section class="border-b border-border-dark bg-primary text-background-dark">
+                <div class="flex flex-wrap">
+                    <div
+                        class="flex-1 min-w-[200px] border-r border-background-dark/20 p-4 flex items-center justify-between">
+                        <span class="font-bold uppercase text-sm">Engineers Active</span>
+                        <span class="font-mono font-bold text-xl">08/12</span>
+                    </div>
+                    <div
+                        class="flex-1 min-w-[200px] border-r border-background-dark/20 p-4 flex items-center justify-between">
+                        <span class="font-bold uppercase text-sm">Parts Inventory</span>
+                        <span class="font-mono font-bold text-xl">94.2%</span>
+                    </div>
+                    <div
+                        class="flex-1 min-w-[200px] border-r border-background-dark/20 p-4 flex items-center justify-between">
+                        <span class="font-bold uppercase text-sm">Avg Turnaround</span>
+                        <span class="font-mono font-bold text-xl">4.5h</span>
+                    </div>
+                    <div
+                        class="flex-1 min-w-[200px] p-4 flex items-center justify-between bg-background-dark text-white">
+                        <span class="font-bold uppercase text-sm text-primary">Live Feed</span>
+                        <span class="material-symbols-outlined text-primary animate-pulse">videocam</span>
+                    </div>
+                </div>
+            </section>
+            <!-- Service Menu Grid -->
+            <section class="p-8 lg:p-12 bg-background-dark">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b border-border-dark pb-6">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white uppercase mb-2">Technical Services</h2>
+                        <p class="text-slate-400 font-mono text-sm">SELECT A CATEGORY FOR DETAILED SPECS</p>
+                    </div>
+                    <a class="text-primary font-mono text-sm hover:underline mt-4 md:mt-0 flex items-center gap-2"
+                        href="#">
+                        FULL CATALOG
+                        <span class="material-symbols-outlined text-base">arrow_outward</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Service Card 1 -->
+                    <div
+                        class="group border border-border-dark bg-surface-dark hover:border-primary transition-colors cursor-pointer relative overflow-hidden">
+                        <div class="h-48 w-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500"
+                            data-alt="Mechanic working on engine tuning with laptop"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCvIGlM2QzRBiEEdgydDWSpEFjJcgz75V2DFoXro4PH7Fnz5xRDmVIhrbCD7d-wO7vyCOEEq5_TXfJ0NzjKPNFyWPmI1Os8x51Ob1kCYqUUDqL6gmtT9ZJ5YUUBZzVoTWHSLtQMfosN07MPRcxd_z5dTo9L_pUnlyA3XyEO7gyMwSEzFh6mU-Fip5o7csi11LwRmuiiJzS4DRD8EvvvCN_ufH33KpoNU8lh_D948DIAkBW7SZ-6xlNjKqNVBfBajpjjwFRwcgNvdPY');">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-white uppercase">Engine Tuning</h3>
+                                <span
+                                    class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">tune</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-6 line-clamp-2">ECU remapping, dynamometer testing, and
+                                performance optimization for track and street.</p>
+                            <div class="border-t border-border-dark pt-4 flex justify-between items-center">
+                                <span class="text-xs font-mono text-primary">CODE: ENG-01</span>
+                                <span class="text-white font-bold text-sm">FROM €450</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div
+                        class="group border border-border-dark bg-surface-dark hover:border-primary transition-colors cursor-pointer relative overflow-hidden">
+                        <div class="h-48 w-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500"
+                            data-alt="Undercarriage of a car showing precise suspension alignment"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAE1neOR6dphKbH7uK3jC2NoU8UXwsXPHa9q6Hr_k_2CdmJIWOrnGPeFcAVyGk81w7XS0yl3bXi45MQhlGSDwR3xaVPaHV2dVjxtAxAxjkacDFIv6-FK0mF6RJ50ZILnzuHvGcSO-xMg8La7aLowWEzjzJJyix80q3ojWEtkUnvNQUTiFxIcWlfkx9ian1cE_9nF-GWhAzgAwRDniRXXBXPwYYdzFcOfJm9MnvwAhqbbzNObH87aGadU2Ryr57Ke88yhVPrjdh7u_E');">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-white uppercase">Precision Alignment</h3>
+                                <span
+                                    class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">straighten</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-6 line-clamp-2">Laser-guided chassis alignment ensuring
+                                optimal tire contact and handling stability.</p>
+                            <div class="border-t border-border-dark pt-4 flex justify-between items-center">
+                                <span class="text-xs font-mono text-primary">CODE: SUS-04</span>
+                                <span class="text-white font-bold text-sm">FROM €120</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div
+                        class="group border border-border-dark bg-surface-dark hover:border-primary transition-colors cursor-pointer relative overflow-hidden">
+                        <div class="h-48 w-full bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-500"
+                            data-alt="Digital diagnostic screen in a car dashboard"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBww7BvSpt2uAT-c3ZXvXRpn73Oie3qsdoQf_yxzrRP7hNJdBOEFreyZV69Ia3dqDYaVB9dTtZ-g1PuLnAqfB9jWgFBpLv2BfNJUKq_5FTTFbBHjxsAAc132_A9-agALAY7Hj_qTDgEHVA4S6HfWMINcws9tsIoTs_js0Yk40A-XXFCMcwaqtaxAX4hYzot2IV_d_VdJaHp89sSt4q_iwkCYwsKrlOq-tNerneHf7A4WCWW0fk7qWynjWu__ym5IoTfS_opQf-r12U');">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-white uppercase">Digital Diagnostics</h3>
+                                <span
+                                    class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">data_usage</span>
+                            </div>
+                            <p class="text-slate-400 text-sm mb-6 line-clamp-2">Full system analysis using OEM-grade
+                                scanners to identify electrical and mechanical faults.</p>
+                            <div class="border-t border-border-dark pt-4 flex justify-between items-center">
+                                <span class="text-xs font-mono text-primary">CODE: DIG-09</span>
+                                <span class="text-white font-bold text-sm">FROM €90</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Live Workshop Status (Table view) -->
+            <section class="border-t border-border-dark bg-surface-dark">
+                <div class="p-8 lg:p-12">
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                        <h2 class="text-xl font-bold text-white uppercase tracking-wider">Live Workshop Activity</h2>
+                    </div>
+                    <div class="overflow-x-auto border border-border-dark">
+                        <table class="w-full text-left text-sm whitespace-nowrap">
+                            <thead
+                                class="bg-background-dark text-slate-400 font-mono text-xs uppercase border-b border-border-dark">
+                                <tr>
+                                    <th class="px-6 py-4 font-normal">Job ID</th>
+                                    <th class="px-6 py-4 font-normal">Vehicle</th>
+                                    <th class="px-6 py-4 font-normal">Operation</th>
+                                    <th class="px-6 py-4 font-normal">Bay</th>
+                                    <th class="px-6 py-4 font-normal text-right">Progress</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-border-dark bg-background-dark/50 font-mono text-slate-300">
+                                <tr class="hover:bg-background-dark transition-colors">
+                                    <td class="px-6 py-4 text-primary">#992-01</td>
+                                    <td class="px-6 py-4">Porsche 992 Turbo S</td>
+                                    <td class="px-6 py-4">Suspension Install</td>
+                                    <td class="px-6 py-4">B01</td>
+                                    <td class="px-6 py-4 text-right">
+                                        <div class="inline-block w-24 h-1.5 bg-slate-800 align-middle ml-2">
+                                            <div class="h-full bg-primary" style="width: 85%"></div>
+                                        </div>
+                                        <span class="ml-2 text-xs">85%</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-background-dark transition-colors">
+                                    <td class="px-6 py-4 text-primary">#BMW-M3</td>
+                                    <td class="px-6 py-4">BMW M3 Comp</td>
+                                    <td class="px-6 py-4">Break-in Service</td>
+                                    <td class="px-6 py-4">B03</td>
+                                    <td class="px-6 py-4 text-right">
+                                        <div class="inline-block w-24 h-1.5 bg-slate-800 align-middle ml-2">
+                                            <div class="h-full bg-primary" style="width: 40%"></div>
+                                        </div>
+                                        <span class="ml-2 text-xs">40%</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-background-dark transition-colors">
+                                    <td class="px-6 py-4 text-primary">#AUD-RS</td>
+                                    <td class="px-6 py-4">Audi RS6 Avant</td>
+                                    <td class="px-6 py-4">Ceramic Coating</td>
+                                    <td class="px-6 py-4">D01</td>
+                                    <td class="px-6 py-4 text-right">
+                                        <div class="inline-block w-24 h-1.5 bg-slate-800 align-middle ml-2">
+                                            <div class="h-full bg-primary" style="width: 15%"></div>
+                                        </div>
+                                        <span class="ml-2 text-xs">15%</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <!-- Footer -->
+            <footer class="border-t border-border-dark bg-background-dark p-8 lg:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="col-span-1 md:col-span-2">
+                        <div class="flex items-center gap-2 mb-4 text-primary">
+                            <span class="material-symbols-outlined">precision_manufacturing</span>
+                            <span class="font-bold text-lg uppercase tracking-tight">Precision Auto</span>
+                        </div>
+                        <p class="text-slate-500 text-sm max-w-sm mb-6">
+                            Defining the standard for automotive care in Berlin through technology and transparency.
+                        </p>
+                        <div class="flex gap-4">
+                            <a class="w-10 h-10 border border-border-dark flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-colors"
+                                href="#">
+                                <span class="font-mono text-xs">IG</span>
+                            </a>
+                            <a class="w-10 h-10 border border-border-dark flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-colors"
+                                href="#">
+                                <span class="font-mono text-xs">LN</span>
+                            </a>
+                            <a class="w-10 h-10 border border-border-dark flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-colors"
+                                href="#">
+                                <span class="font-mono text-xs">YT</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold uppercase mb-4 text-sm">Location</h4>
+                        <address class="text-slate-400 text-sm not-italic space-y-2 font-mono">
+                            <p>Industrial District 4</p>
+                            <p>Friedrichshain-Kreuzberg</p>
+                            <p>10245 Berlin, Germany</p>
+                        </address>
+                        <div
+                            class="mt-4 h-24 w-full bg-slate-800 border border-border-dark relative grayscale opacity-60 hover:opacity-100 transition-opacity">
+                            <img class="w-full h-full object-cover" data-alt="Map view of Berlin industrial district"
+                                data-location="Berlin"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq51-bJ_5068eeNOdlRRDdnyfM8q-eoQx8PDVUG4IGxTBB-lH48IvuUVw5ljNkbPNfdm7Ljo8AelA7MpYWb_6YsdOf-cx_PYyIid_bO7UP0SF7ii16X0w1gPcbKeHh9oJ9xhYb98lNUoW6mpLxP66QAC03eLMxvj4tyWihHGjuCgMV0iBFbLCfR1Me8HTwzTEm0Rvm_XLMipUHTNKmMKnCUupF4Yjkd4MSIseB8xOHXsmRoqdfeFqAe-BuMTPuH9GTPK8uThTFP6g" />
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-bold uppercase mb-4 text-sm">Contact</h4>
+                        <ul class="space-y-3 text-sm text-slate-400 font-mono">
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-base">call</span>
+                                +49 30 1234 5678
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-base">mail</span>
+                                service@precision.de
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="material-symbols-outlined text-base">schedule</span>
+                                Mon-Fri: 08:00 - 18:00
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    class="mt-12 pt-8 border-t border-border-dark flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-600 font-mono">
+                    <p>© 2024 PRECISION AUTO GMBH. ALL RIGHTS RESERVED.</p>
+                    <div class="flex gap-6">
+                        <a class="hover:text-primary" href="#">IMPRESSUM</a>
+                        <a class="hover:text-primary" href="#">PRIVACY POLICY</a>
+                        <a class="hover:text-primary" href="#">TERMS</a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+</body>
+
+</html>

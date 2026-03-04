@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Technician Terminal V2.0</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ffd900",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#121212",
+                        "terminal-bg": "#1a1a1a",
+                        "border-gray": "#2a2a2a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "0px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .grid-line-x {
+            background-image: linear-gradient(to right, #2a2a2a 1px, transparent 1px);
+            background-size: 40px 100%;
+        }
+
+        .grid-line-y {
+            background-image: linear-gradient(to bottom, #2a2a2a 1px, transparent 1px);
+            background-size: 100% 40px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #121212;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #ffd900;
+        }
+    </style>
+</head>
+
+<body
+    class="min-h-screen flex flex-col border-primary border-t-4 bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+    <!-- Top Navigation Bar -->
+    <header class="border-b border-border-gray bg-background-dark flex items-center justify-between px-6 py-4">
+        <div class="flex items-center gap-6">
+            <a href="../index.html" class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-3xl">precision_manufacturing</span>
+                <h1 class="font-display font-bold text-xl tracking-tighter uppercase">Tech_Terminal_V2.0</h1>
+            </a>
+            <div class="h-8 w-px bg-border-gray"></div>
+            <div class="flex items-center gap-4 font-mono text-xs text-slate-400">
+                <span class="flex items-center gap-1"><span class="w-2 h-2 bg-green-500"></span> STATION_04</span>
+                <span class="flex items-center gap-1 opacity-50">|</span>
+                <span>CPU: 24%</span>
+                <span>MEM: 4.2GB</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="relative group">
+                <span
+                    class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-slate-500 text-sm">search</span>
+                <input
+                    class="bg-terminal-bg border border-border-gray pl-10 pr-4 py-2 font-mono text-xs w-64 focus:border-primary focus:ring-0 text-slate-100"
+                    placeholder="QUERY_SYSTEM..." type="text" />
+            </div>
+            <button class="p-2 border border-border-gray hover:bg-primary hover:text-black transition-colors">
+                <span class="material-symbols-outlined text-sm">settings</span>
+            </button>
+            <button class="p-2 border border-border-gray hover:bg-primary hover:text-black transition-colors">
+                <span class="material-symbols-outlined text-sm">notifications</span>
+            </button>
+            <div class="w-10 h-10 bg-primary flex items-center justify-center text-black font-bold font-mono">
+                JS
+            </div>
+        </div>
+    </header>
+    <!-- Main Content Area -->
+    <main class="flex-1 flex overflow-hidden">
+        <!-- Sidebar Navigation -->
+        <nav class="w-20 border-r border-border-gray bg-background-dark flex flex-col items-center py-6 gap-8">
+            <a href="../index.html" class="text-slate-500 hover:text-primary group flex flex-col items-center gap-1">
+                <span class="material-symbols-outlined text-3xl">home</span>
+                <span class="text-[10px] font-bold">HOME</span>
+            </a>
+            <a href="index.html" class="text-primary group flex flex-col items-center gap-1">
+                <span class="material-symbols-outlined text-3xl">dashboard</span>
+                <span class="text-[10px] font-bold">DASH</span>
+            </a>
+            <a href="../analytics/index.html"
+                class="text-slate-500 hover:text-primary group flex flex-col items-center gap-1">
+                <span class="material-symbols-outlined text-3xl">analytics</span>
+                <span class="text-[10px] font-bold">DIAG</span>
+            </a>
+            <button class="text-slate-500 hover:text-primary group flex flex-col items-center gap-1">
+                <span class="material-symbols-outlined text-3xl">checklist</span>
+                <span class="text-[10px] font-bold">TASKS</span>
+            </button>
+            <a href="../inventory/index.html"
+                class="text-slate-500 hover:text-primary group flex flex-col items-center gap-1">
+                <span class="material-symbols-outlined text-3xl">inventory_2</span>
+                <span class="text-[10px] font-bold">INV</span>
+            </a>
+            <div class="mt-auto">
+                <button class="text-red-500 hover:bg-red-500/10 p-2">
+                    <span class="material-symbols-outlined">power_settings_new</span>
+                </button>
+            </div>
+        </nav>
+        <!-- Dynamic Grid Content -->
+        <div class="flex-1 grid grid-cols-12 grid-rows-6 gap-px bg-border-gray">
+            <!-- Section: Active Job Queue -->
+            <section class="col-span-8 row-span-3 bg-background-dark p-6 overflow-hidden flex flex-col">
+                <div class="flex justify-between items-end mb-6">
+                    <h2
+                        class="font-display font-bold text-2xl uppercase tracking-widest border-l-4 border-primary pl-4">
+                        Active_Job_Queue</h2>
+                    <span class="font-mono text-xs text-slate-500 uppercase">Count: 03 Units</span>
+                </div>
+                <div class="flex-1 overflow-auto custom-scrollbar">
+                    <table class="w-full text-left font-mono text-sm">
+                        <thead class="bg-terminal-bg text-slate-500 border-b border-border-gray">
+                            <tr>
+                                <th class="p-4 font-normal">VIN_IDENTIFIER</th>
+                                <th class="p-4 font-normal">UNIT_MODEL</th>
+                                <th class="p-4 font-normal">TIME_ELAPSED</th>
+                                <th class="p-4 font-normal text-right">STATUS</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-border-gray">
+                            <tr
+                                class="hover:bg-primary/5 transition-colors border-l-2 border-transparent hover:border-primary">
+                                <td class="p-4 text-primary">WBA123456789</td>
+                                <td class="p-4">BMW M4 G82 COMPETITION</td>
+                                <td class="p-4">01:45:12</td>
+                                <td class="p-4 text-right">
+                                    <span
+                                        class="bg-primary/10 text-primary border border-primary px-3 py-1 text-xs font-bold uppercase">In_Progress</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-primary/5 transition-colors">
+                                <td class="p-4 text-primary">YV1987654321</td>
+                                <td class="p-4">VOLVO S60 RECHARGE</td>
+                                <td class="p-4">00:22:45</td>
+                                <td class="p-4 text-right">
+                                    <span
+                                        class="bg-slate-800 text-slate-300 border border-slate-700 px-3 py-1 text-xs font-bold uppercase">Diagnosing</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-primary/5 transition-colors">
+                                <td class="p-4 text-primary">WP0098765432</td>
+                                <td class="p-4">PORSCHE 911 GT3 RS</td>
+                                <td class="p-4">02:10:05</td>
+                                <td class="p-4 text-right">
+                                    <span
+                                        class="bg-slate-800 text-slate-300 border border-slate-700 px-3 py-1 text-xs font-bold uppercase">Staged</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            <!-- Section: Diagnostic Feed -->
+            <section class="col-span-4 row-span-4 bg-background-dark p-6 border-l border-border-gray flex flex-col">
+                <h2
+                    class="font-display font-bold text-2xl uppercase tracking-widest border-l-4 border-primary pl-4 mb-6">
+                    Diagnostic_Feed</h2>
+                <div class="space-y-4 font-mono text-xs">
+                    <div class="p-4 bg-red-500/10 border border-red-500/30">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-red-500 font-bold">[!] ERROR_CODE: P0300</span>
+                            <span class="text-slate-500">14:22:01</span>
+                        </div>
+                        <p class="text-slate-300 uppercase">Random/Multiple Cylinder Misfire Detected</p>
+                        <div class="mt-2 flex gap-2">
+                            <button class="px-2 py-1 bg-red-500 text-black font-bold uppercase">Clear</button>
+                            <button
+                                class="px-2 py-1 border border-red-500 text-red-500 font-bold uppercase">Isolate</button>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-terminal-bg border border-border-gray">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-primary font-bold">[i] SENSOR_DATA: T_ENG</span>
+                            <span class="text-slate-500">14:21:45</span>
+                        </div>
+                        <div class="h-12 w-full bg-slate-800 relative overflow-hidden mb-2">
+                            <div class="absolute inset-0 bg-primary/20 w-3/4"></div>
+                            <div class="absolute inset-0 flex items-center px-3 justify-between">
+                                <span class="text-slate-100">TEMPERATURE</span>
+                                <span class="text-primary font-bold">102°C</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-500 uppercase text-[10px]">Normal Operating Range: 90°C - 105°C</p>
+                    </div>
+                    <div class="p-4 bg-terminal-bg border border-border-gray">
+                        <div class="flex justify-between items-start mb-2">
+                            <span class="text-green-500 font-bold">[i] TELEMETRY: FUEL_PRS</span>
+                            <span class="text-slate-500">14:20:12</span>
+                        </div>
+                        <p class="text-slate-300">STABLE: 4.2 BAR</p>
+                    </div>
+                </div>
+                <div class="mt-auto pt-6">
+                    <button
+                        class="w-full py-3 bg-primary text-black font-bold uppercase hover:bg-white transition-colors">Init_Full_Scan</button>
+                </div>
+            </section>
+            <!-- Section: Task Management -->
+            <section class="col-span-8 row-span-1 bg-background-dark p-6 border-t border-border-gray">
+                <div class="flex gap-8 items-center h-full">
+                    <div class="flex-1">
+                        <h3 class="font-display font-bold text-sm uppercase text-slate-400 mb-3">Stage_02_Tuning</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <div class="w-5 h-5 border-2 border-primary flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary text-sm font-bold">check</span>
+                                </div>
+                                <span class="font-mono text-xs uppercase group-hover:text-primary">Flash ECU
+                                    Module</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <div class="w-5 h-5 border-2 border-slate-600 flex items-center justify-center"></div>
+                                <span class="font-mono text-xs uppercase text-slate-500 group-hover:text-primary">Fuel
+                                    Map Calibration</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="h-12 w-px bg-border-gray"></div>
+                    <div class="flex-1">
+                        <h3 class="font-display font-bold text-sm uppercase text-slate-400 mb-3">Brake_System_Overhaul
+                        </h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <div class="w-5 h-5 border-2 border-primary flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-primary text-sm font-bold">check</span>
+                                </div>
+                                <span class="font-mono text-xs uppercase group-hover:text-primary">Ceramic Pad
+                                    Install</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <div class="w-5 h-5 border-2 border-slate-600 flex items-center justify-center"></div>
+                                <span class="font-mono text-xs uppercase text-slate-500 group-hover:text-primary">Bleed
+                                    ABS Lines</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Section: System Logs Terminal -->
+            <section class="col-span-12 row-span-2 bg-terminal-bg p-6 border-t border-border-gray flex flex-col">
+                <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-sm">terminal</span>
+                        <h2 class="font-mono text-xs uppercase tracking-widest text-primary">System_Logs_Terminal</h2>
+                    </div>
+                    <div class="flex gap-4 font-mono text-[10px] text-slate-500">
+                        <span>FILTER: ALL</span>
+                        <span>AUTO_SCROLL: ON</span>
+                    </div>
+                </div>
+                <div
+                    class="flex-1 bg-black p-4 font-mono text-[11px] overflow-auto custom-scrollbar border border-border-gray">
+                    <div class="space-y-1">
+                        <p class="text-slate-500">2023-10-24 14:25:01 [SYS] Establishing secure connection to
+                            VIN:WBA123456789...</p>
+                        <p class="text-green-500">2023-10-24 14:25:03 [SYS] Handshake successful. Protocol: SAE J1939.
+                        </p>
+                        <p class="text-slate-100">2023-10-24 14:25:05 [DATA] Retrieving DTC codes from central
+                            gateway...</p>
+                        <p class="text-yellow-500">2023-10-24 14:25:08 [WARN] O2 Sensor Bank 1 shows irregular voltage
+                            fluctuations.</p>
+                        <p class="text-slate-500">2023-10-24 14:25:12 [SYS] Polling sensor array 0x4A - 0x7F...</p>
+                        <p class="text-slate-100">2023-10-24 14:25:15 [TASK] "Stage 02 Tuning" started by Technician JS.
+                        </p>
+                        <p class="text-red-500 font-bold">2023-10-24 14:25:20 [CRIT] Oil Pressure drop detected in
+                            high-RPM simulation. EMERGENCY STOP ENABLED.</p>
+                        <p class="text-slate-500 animate-pulse">2023-10-24 14:25:22 [SYS] Awaiting technician input_</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Bottom Status Bar -->
+    <footer
+        class="bg-primary text-black px-6 py-2 flex justify-between items-center font-mono text-[10px] font-bold uppercase">
+        <div class="flex gap-6">
+            <span>Server: local_node_01</span>
+            <span>Uptime: 242:12:44</span>
+            <span>Latency: 12ms</span>
+        </div>
+        <div class="flex gap-6 items-center">
+            <div class="flex gap-1 items-center">
+                <div class="w-2 h-2 bg-black"></div>
+                <span>Sync_Active</span>
+            </div>
+            <span>V2.0.4-STABLE</span>
+        </div>
+    </footer>
+</body>
+
+</html>
